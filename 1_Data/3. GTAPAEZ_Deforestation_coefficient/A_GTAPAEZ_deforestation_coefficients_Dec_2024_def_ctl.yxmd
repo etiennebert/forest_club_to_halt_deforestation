@@ -1147,7 +1147,7 @@ Type = "ctl"
           <Properties>
             <Configuration>
               <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`</File>
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`</File>
               <FormatSpecificOptions>
                 <FirstRowData>False</FirstRowData>
                 <ImportLine>3</ImportLine>
@@ -1155,16 +1155,19 @@ Type = "ctl"
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>Ha_GTAP_AEZ_2014_Land_Coverage.xlsx
+              <DefaultAnnotationText>Ha_GTAP_AEZ_2019_Land_Coverage.xlsx
 Query=`Harvested_area$`</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="Country" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
-                <Field name="Crops" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
-                <Field name="AEZ" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
-                <Field name="2014 Harvested Area " source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`" type="Double" />
+                <Field name="Country" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
+                <Field name="Crops" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
+                <Field name="AEZ" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
+                <Field name="2019 Harvested Area" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="Double" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -1179,7 +1182,7 @@ Query=`Harvested_area$`</DefaultAnnotationText>
               <SummarizeFields>
                 <SummarizeField field="Country" action="GroupBy" rename="Country" />
                 <SummarizeField field="Crops" action="GroupBy" rename="Crops" />
-                <SummarizeField field="2014 Harvested Area " action="Sum" rename="Sum_2014 Harvested Area " />
+                <SummarizeField field="2019 Harvested Area" action="GroupBy" rename="Sum_2014 Harvested Area " />
               </SummarizeFields>
             </Configuration>
             <Annotation DisplayMode="0">
@@ -1209,6 +1212,7 @@ Query=`Harvested_area$`</DefaultAnnotationText>
                   <OrderChanged value="False" />
                   <CommaDecimal value="False" />
                   <SelectFields>
+                    <SelectField field="Left_2019 Harvested Area" selected="True" rename="2014 Harvested Area" input="Left_" />
                     <SelectField field="Right_Country" selected="False" rename="Right_Country" input="Right_" />
                     <SelectField field="Right_Crops" selected="False" rename="Right_Crops" input="Right_" />
                     <SelectField field="*Unknown" selected="True" />
@@ -1231,12 +1235,12 @@ Query=`Harvested_area$`</DefaultAnnotationText>
           <Properties>
             <Configuration>
               <FormulaFields>
-                <FormulaField expression="[2014 Harvested Area ]/[Sum_2014 Harvested Area ]" field="2014 Harvested Area " size="8" type="Double" enabled="true" />
+                <FormulaField expression="[2014 Harvested Area]/[Sum_2014 Harvested Area ]" field="2014 Harvested Area" size="8" type="Double" enabled="true" />
               </FormulaFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText><![CDATA[2014 Harvested Area  = [2014 Harvested Area ]/[Sum_2014 Harvested Area ]
+              <DefaultAnnotationText><![CDATA[2014 Harvested Area = [2014 Harvested Area]/[Sum_2014 Harvested Area ]
 ]]></DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
@@ -1254,10 +1258,11 @@ Query=`Harvested_area$`</DefaultAnnotationText>
                 <Field field="Crops" />
               </GroupFields>
               <HeaderField field="AEZ" />
-              <DataField field="2014 Harvested Area " />
+              <DataField field="2014 Harvested Area" />
               <Methods>
                 <Method method="Sum" />
               </Methods>
+              <RetainSpecChars value="False" />
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -1298,7 +1303,7 @@ Query=`Harvested_area$`</DefaultAnnotationText>
           <Properties>
             <Configuration>
               <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`</File>
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`</File>
               <FormatSpecificOptions>
                 <FirstRowData>False</FirstRowData>
                 <ImportLine>1</ImportLine>
@@ -1306,22 +1311,20 @@ Query=`Harvested_area$`</DefaultAnnotationText>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx
+              <DefaultAnnotationText>A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx
 Query=`Sheet1$`</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="Area Code (M49)" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="FAO" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Area" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Year" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="GTAP code" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="ID" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="SMA 3" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Ratio total SMA 3 annual evolution" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Positive area annual evolution" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Sum_ha" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Area" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Year" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="GTAP code" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="SMA 3" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Sum_ha" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -1965,24 +1968,6 @@ Query=`HILDA_dynamics$`</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
         </Node>
-        <Node ToolID="23">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="703" y="200" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="if [country] = &quot;Angola&quot; or [country] = &quot;Democratic Republic of the Congo&quot; then &quot;AngDRC&quot; else [country] endif" field="country" size="100" type="V_WString" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>country = if [country] = "Angola" or [country] = "Democratic Republic of the Con...</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
         <Node ToolID="244">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
             <Position x="80" y="103" />
@@ -1998,9 +1983,6 @@ Query=`HILDA_dynamics$`</DefaultAnnotationText>
               <DefaultAnnotationText>C-2_HILDA_V_2_1_Transition_GTAP_AEZ_Limited.yxdb</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
             <MetaInfo connection="Output">
               <RecordInfo>
                 <Field name="country" size="100" source="Summarize: GroupBy - country" type="V_WString" />
@@ -2034,7 +2016,7 @@ Query=`HILDA_dynamics$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="260">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="55" y="488" width="1118" height="373" />
+        <Position x="55" y="488" width="1118" height="334" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -2257,24 +2239,6 @@ Query=`HILDA_dynamics (2)$`</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
         </Node>
-        <Node ToolID="258">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="861" y="670" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="if [country] = &quot;Angola&quot; or [country] = &quot;Democratic Republic of the Congo&quot; then &quot;AngDRC&quot; else [country] endif" field="country" size="100" type="V_WString" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>country = if [country] = "Angola" or [country] = "Democratic Republic of the Con...</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
         <Node ToolID="245">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
             <Position x="81" y="537" />
@@ -2290,9 +2254,6 @@ Query=`HILDA_dynamics (2)$`</DefaultAnnotationText>
               <DefaultAnnotationText>C-2_HILDA_V_2_1_State_GTAP_AEZ_Limited.yxdb</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
             <MetaInfo connection="Output">
               <RecordInfo>
                 <Field name="country" size="100" source="Summarize: GroupBy - country" type="V_WString" />
@@ -2571,7 +2532,7 @@ Query=`HILDA_dynamics (2)$`</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="7" Connection="Join" />
-      <Destination ToolID="23" Connection="Input" />
+      <Destination ToolID="13" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="11" Connection="Output" />
@@ -2602,10 +2563,6 @@ Query=`HILDA_dynamics (2)$`</DefaultAnnotationText>
       <Destination ToolID="7" Connection="Right" />
     </Connection>
     <Connection>
-      <Origin ToolID="23" Connection="Output" />
-      <Destination ToolID="13" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="244" Connection="Output" />
       <Destination ToolID="12" Connection="Input" />
     </Connection>
@@ -2615,7 +2572,7 @@ Query=`HILDA_dynamics (2)$`</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="246" Connection="Join" />
-      <Destination ToolID="258" Connection="Input" />
+      <Destination ToolID="252" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="250" Connection="Output" />
@@ -2644,10 +2601,6 @@ Query=`HILDA_dynamics (2)$`</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="257" Connection="True" />
       <Destination ToolID="246" Connection="Right" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="258" Connection="Output" />
-      <Destination ToolID="252" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="245" Connection="Output" />

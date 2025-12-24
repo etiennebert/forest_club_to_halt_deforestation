@@ -1,4 +1,2 @@
-"colombia"
-"ghana"
+"paraguay"
 "ivorycoast"
-"peru"

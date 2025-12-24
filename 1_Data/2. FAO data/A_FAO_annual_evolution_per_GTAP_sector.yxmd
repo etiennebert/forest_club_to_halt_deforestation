@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="174" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_October_2024_GLORIA.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A-3_Output_FAO_annual_evolution_per_sector_October_2024_GLORIA.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Area Code (M49)" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_October_2024_GLORIA.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Area" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_October_2024_GLORIA.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Year" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_October_2024_GLORIA.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="SMA 3" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_October_2024_GLORIA.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Ratio total SMA 3 annual evolution" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_October_2024_GLORIA.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Positive area annual evolution" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_October_2024_GLORIA.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="GLORIA mapping" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_October_2024_GLORIA.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="174" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="7" />
+          <Fields>
+            <Field name="FAO" />
+            <Field name="GTAP" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Timor-Leste</c>
+              <c>East Timor</c>
+            </r>
+            <r>
+              <c>Lao People's Democratic Republic</c>
+              <c>Laos</c>
+            </r>
+            <r>
+              <c>United Republic of Tanzania</c>
+              <c>Tanzania</c>
+            </r>
+            <r>
+              <c>Viet Nam</c>
+              <c>Vietnam</c>
+            </r>
+            <r>
+              <c>Venezuela (Bolivarian Republic of)</c>
+              <c>Venezuela</c>
+            </r>
+            <r>
+              <c>Bolivia (Plurinational State of)</c>
+              <c>Bolivia</c>
+            </r>
+            <r>
+              <c>Côte d'Ivoire</c>
+              <c>Ivory Coast</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="378" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>Area</FieldFind>
+          <FieldSearch>FAO</FieldSearch>
+          <ReplaceFoundField>GTAP</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="378" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-1_FAO_Cropland_mapping_GLORIA.xlsx|||`Mapping$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A-1_FAO_Cropland_mapping_GLORIA.xlsx
+Query=`Mapping$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HILDA+" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-1_FAO_Cropland_mapping_GLORIA.xlsx|||`Mapping$`" type="V_String" />
+            <Field name="FAO commodity" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-1_FAO_Cropland_mapping_GLORIA.xlsx|||`Mapping$`" type="V_String" />
+            <Field name="Exiobase mapping" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-1_FAO_Cropland_mapping_GLORIA.xlsx|||`Mapping$`" type="V_String" />
+            <Field name="GTAP mapping" size="432" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-1_FAO_Cropland_mapping_GLORIA.xlsx|||`Mapping$`" type="V_String" />
+            <Field name="GTAP code" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-1_FAO_Cropland_mapping_GLORIA.xlsx|||`Mapping$`" type="V_String" />
+            <Field name="GLORIA mapping" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-1_FAO_Cropland_mapping_GLORIA.xlsx|||`Mapping$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="558" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="GLORIA mapping" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="GLORIA mapping" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_HILDA+" selected="False" input="Right_" />
+                <SelectField field="Right_FAO commodity" selected="False" input="Right_" />
+                <SelectField field="Right_Exiobase mapping" selected="False" input="Right_" />
+                <SelectField field="Right_GTAP mapping" selected="False" input="Right_" />
+                <SelectField field="Right_GLORIA mapping" selected="False" rename="Right_GLORIA mapping" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="666" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Area" action="GroupBy" rename="Area" />
+            <SummarizeField field="Year" action="GroupBy" rename="Year" />
+            <SummarizeField field="GTAP code" action="GroupBy" rename="GTAP code" />
+            <SummarizeField field="SMA 3" action="Sum" rename="SMA 3" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="786" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Area" order="Ascending" />
+            <Field field="GTAP code" order="Ascending" />
+            <Field field="Year" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Area - Ascending
+GTAP code - Ascending
+Year - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="906" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||Sheet1</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <UNCLocal>False</UNCLocal>
+            <SkipFieldNames>False</SkipFieldNames>
+            <SuppressBlankFile>False</SuppressBlankFile>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Join" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>A_FAO_annual_evolution_per_GTAP_sector</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="21fb696d-986a-4c45-81ae-43cda661ed0f" />
+      <Telemetry>
+        <PreviousWorkflowId value="3c1060fa-ad6d-4b95-961e-47e734a84253" />
+        <OriginWorkflowId value="3c1060fa-ad6d-4b95-961e-47e734a84253" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,2894 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1842" y="1220" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>NotContains</Operator>
+            <Field>Type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2023-11-18 12:32:12</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Cattle</Operand>
+              <StartDate>2023-11-18 12:32:12</StartDate>
+              <EndDate>2023-11-18 12:32:12</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!Contains([Type],"Cattle")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="228">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="4590" y="152" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">A-1_Database_Forest_Intensity_GTAPAEZ_shocks_Deforestation.xlsx|||Deforestation$</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <UNCLocal>False</UNCLocal>
+            <SkipFieldNames>False</SkipFieldNames>
+            <SuppressBlankFile>False</SuppressBlankFile>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A-1_Database_Forest_Intensity_GTAPAEZ_shocks_Deforestation.xlsx
+Query=Deforestation$</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="324">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="4365" y="155" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[country]+'#'+[AEZ]+'#'+[Crops]" field="ID" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[ID = [country]+'#'+[AEZ]+'#'+[Crops]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="236">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3074" y="980" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;ctl&quot;" field="Type" size="255" type="V_String" />
+            <FormulaField expression="[Stable_Cattle]*100" field="Stable_Cattle" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Type = "ctl"
+Stable_Cattle = [Stable_Cattle]*100
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="237">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3336" y="980" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Type" selected="True" rename="Name" />
+            <SelectField field="Stable_Cattle" selected="True" rename="HILDA_Land_Cover_Ha" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="336">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="4386" y="991" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">A-2_Database_Forest_Intensity_GTAPAEZ_shocks_Land_Change_ctl.xlsx|||Land_Cover</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <UNCLocal>False</UNCLocal>
+            <SkipFieldNames>False</SkipFieldNames>
+            <SuppressBlankFile>False</SuppressBlankFile>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A-2_Database_Forest_Intensity_GTAPAEZ_shocks_Land_Change_ctl.xlsx
+Query=Land_Cover</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="343">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="3599" y="980" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[year] &gt;= 2010 and [year] &lt;= 2018</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[year] &gt;= 2010 and [year] &lt;= 2018</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="344">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3861" y="980" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[country]+'#'+[AEZ]+'#'+[Name]" field="ID" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[ID = [country]+'#'+[AEZ]+'#'+[Name]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="348">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="4410" y="1351" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">A-3_Database_Forest_Intensity_GTAPAEZ_shocks_LU_ctl.xlsx|||Sheet1</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <UNCLocal>False</UNCLocal>
+            <SkipFieldNames>False</SkipFieldNames>
+            <SuppressBlankFile>False</SuppressBlankFile>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A-3_Database_Forest_Intensity_GTAPAEZ_shocks_LU_ctl.xlsx
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="349">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3866" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Sum_HILDA_add_LU_ha" selected="True" rename="HILDA_Additional_LU_Ha (2010-2018)" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="350">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="4123" y="980" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="year" selected="True" />
+            <SelectField field="country" selected="True" />
+            <SelectField field="AEZ" selected="True" />
+            <SelectField field="Name" selected="True" />
+            <SelectField field="ID" selected="True" />
+            <SelectField field="HILDA_Land_Cover_Ha" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="351">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="4012" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[country]+'#'+[AEZ]+'#'+[Name]" field="ID" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[ID = [country]+'#'+[AEZ]+'#'+[Name]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="352">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="4158" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="country" selected="True" />
+            <SelectField field="AEZ" selected="True" />
+            <SelectField field="Name" selected="True" />
+            <SelectField field="ID" selected="True" />
+            <SelectField field="HILDA_Additional_LU_Ha (2010-2018)" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="353">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="4449" y="155" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="country" selected="True" />
+            <SelectField field="AEZ" selected="True" />
+            <SelectField field="Crops" selected="True" rename="Name" />
+            <SelectField field="ID" selected="True" />
+            <SelectField field="HILDA_deforestation_Ha" selected="True" type="Float" size="4" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="400">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3281" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[HILDA_add_LU]*100" field="HILDA_add_LU" size="4" type="Int32" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[HILDA_add_LU = [HILDA_add_LU]*100
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="402">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3427" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="HILDA_add_LU" selected="True" rename="HILDA_add_LU_ha" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="403">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="3573" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[year] &gt;= 2010 and [year] &lt;= 2018</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[year] &gt;= 2010 and [year] &lt;= 2018</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="404">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="3719" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="country" action="GroupBy" rename="country" />
+            <SummarizeField field="AEZ" action="GroupBy" rename="AEZ" />
+            <SummarizeField field="Name" action="GroupBy" rename="Name" />
+            <SummarizeField field="HILDA_add_LU_ha" action="Sum" rename="Sum_HILDA_add_LU_ha" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="414">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2550" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="415">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2696" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="country" order="Ascending" />
+            <Field field="AEZ" order="Ascending" />
+            <Field field="year" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>country - Ascending
+AEZ - Ascending
+year - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="416">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="2842" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>year</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>IF [AEZ]=[Row-1:AEZ] &amp;&amp; [country]=[Row-1:country]  THEN [Sum_Count]-[Row-1:Sum_Count] else 0 ENDIF</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IF [AEZ]=[Row-1:AEZ] &amp;&amp; [country]=[Row-1:country]  THEN [Sum_...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="417">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2989" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [New Field]&gt;0 then [New Field] else 0 endif" field="New Field" size="4" type="Int32" enabled="true" />
+            <FormulaField expression="&quot;ctl&quot;" field="Type" size="255" type="V_String" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[New Field = if [New Field]>0 then [New Field] else 0 endif
+Type = "ctl"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="418">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3135" y="1355" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Type" selected="True" rename="Name" />
+            <SelectField field="Sum_Count" selected="False" />
+            <SelectField field="New Field" selected="True" rename="HILDA_add_LU" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="420">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2550" y="980" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Sum_Count" selected="True" rename="Stable_Cattle" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="221">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2812" y="980" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="year" action="GroupBy" rename="year" />
+            <SummarizeField field="country" action="GroupBy" rename="country" />
+            <SummarizeField field="Type" action="GroupBy" rename="Type" />
+            <SummarizeField field="AEZ" action="GroupBy" rename="AEZ" />
+            <SummarizeField field="Stable_Cattle" action="Sum" rename="Stable_Cattle" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="423">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="3378" y="1015" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="Field1" />
+            <Field name="Field2" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Democratic Republic of the Congo</c>
+              <c>DRC</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="424">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="3474" y="991" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>country</FieldFind>
+          <FieldSearch>Field1</FieldSearch>
+          <ReplaceFoundField>Field2</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="425">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="3402" y="1471" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>country</FieldFind>
+          <FieldSearch>Field1</FieldSearch>
+          <ReplaceFoundField>Field2</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="426">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="3306" y="1495" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="Field1" />
+            <Field name="Field2" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Democratic Republic of the Congo</c>
+              <c>DRC</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="427">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="4590" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="country" action="CountDistinct" rename="CountDistinct_country" />
+            <SummarizeField field="country" action="GroupBy" rename="country" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="428">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="4266" y="858" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="country" action="CountDistinct" rename="CountDistinct_country" />
+            <SummarizeField field="country" action="GroupBy" rename="country" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="429">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="4266" y="1302" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="country" action="CountDistinct" rename="CountDistinct_country" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="421">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="1914" y="151" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>country</FieldFind>
+          <FieldSearch>Field1</FieldSearch>
+          <ReplaceFoundField>Field2</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="422">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="1830" y="175" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="Field1" />
+            <Field name="Field2" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Democratic Republic of the Congo</c>
+              <c>DRC</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="240">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="2081" y="54" width="2161" height="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Agri. deforestation HILDA</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="74">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="2106" y="138" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>Type</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-11-18 18:21:01</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>deforestation_</Operand>
+                  <StartDate>2023-11-18 18:21:01</StartDate>
+                  <EndDate>2023-11-18 18:21:01</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Type],"deforestation_")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="75">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="2310" y="127" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>NotContains</Operator>
+                <Field>Type</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-11-18 18:21:25</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Cattle</Operand>
+                  <StartDate>2023-11-18 18:21:25</StartDate>
+                  <EndDate>2023-11-18 18:21:25</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!Contains([Type],"Cattle")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="76">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="2418" y="115" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="year" action="GroupBy" rename="year" />
+                <SummarizeField field="country" action="GroupBy" rename="country" />
+                <SummarizeField field="AEZ" action="GroupBy" rename="AEZ" />
+                <SummarizeField field="Sum_Count" action="Sum" rename="Sum_Sum_Count" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="77">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="2526" y="116" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNotNull</Operator>
+                <Field>AEZ</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-11-18 18:33:11</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2023-11-18 18:33:11</StartDate>
+                  <EndDate>2023-11-18 18:33:11</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!IsNull([AEZ])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="78">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="2634" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Sum_Sum_Count" selected="True" rename="Hilda_annual_deforestation" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="81">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="3102" y="163" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="country" />
+                <Field field="year" />
+                <Field field="AEZ" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Area" />
+                <Field field="Year" />
+                <Field field="Name" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Area" selected="False" input="Right_" />
+                    <SelectField field="Right_Year" selected="False" rename="Right_Year" input="Right_" />
+                    <SelectField field="Right_Name" selected="False" input="Right_" />
+                    <SelectField field="Right_Sum_Value" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="97">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="4014" y="164" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="country" action="GroupBy" rename="country" />
+                <SummarizeField field="AEZ" action="GroupBy" rename="AEZ" />
+                <SummarizeField field="Name" action="GroupBy" rename="Crops" />
+                <SummarizeField field="Value" action="Sum" rename="HILDA_deforestation_Ha" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="195">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3582" y="416" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="196">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="3702" y="416" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNotNull</Operator>
+                <Field>AEZ</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-11-20 21:54:49</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2023-11-20 21:54:49</StartDate>
+                  <EndDate>2023-11-20 21:54:49</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!IsNull([AEZ])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="197">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="3810" y="404" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="country" action="GroupBy" rename="country" />
+                <SummarizeField field="AEZ" action="GroupBy" rename="AEZ" />
+                <SummarizeField field="Sum_Count" action="Sum" rename="Sum_Sum_Count" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="266">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2202" y="127" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Sum_Count]*100" field="Sum_Count" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Sum_Count = [Sum_Count]*100
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="199">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="3906" y="404" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;ctl&quot;" field="Crops" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Crops = "ctl"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="306">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="2646" y="296" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>Numeric</FieldType>
+              <Fields orderChanged="False">
+                <Field name="c_b" />
+                <Field name="gro" />
+                <Field name="ocr" />
+                <Field name="osd" />
+                <Field name="pdr" />
+                <Field name="pfb" />
+                <Field name="v_f" />
+                <Field name="wht" />
+                <Field name="Year" selected="False" />
+                <Field name="Sum_Value" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <CopyOutput value="False" />
+              <Expression>[_CurrentField_]/[Sum_Value]</Expression>
+              <ChangeFieldType value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[_CurrentField_]/[Sum_Value]</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="308">
+          <GuiSettings>
+            <Position x="2802" y="294" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">""</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="309">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="2946" y="296" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Year" selected="True" type="Int64" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="310">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="3234" y="164" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>Numeric</FieldType>
+              <Fields orderChanged="False">
+                <Field name="c_b" />
+                <Field name="gro" />
+                <Field name="ocr" />
+                <Field name="osd" />
+                <Field name="pdr" />
+                <Field name="pfb" />
+                <Field name="v_f" />
+                <Field name="wht" />
+                <Field name="year" selected="False" />
+                <Field name="Hilda_annual_deforestation" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <CopyOutput value="False" />
+              <Expression>[_CurrentField_]*[Hilda_annual_deforestation]</Expression>
+              <ChangeFieldType value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[_CurrentField_]*[Hilda_annual_deforestation]</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="311">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3378" y="163" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Hilda_annual_deforestation" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="312">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+            <Position x="3534" y="176" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ErrorWarn>Warn</ErrorWarn>
+              <KeyFields>
+                <Field field="year" />
+                <Field field="country" />
+                <Field field="AEZ" />
+              </KeyFields>
+              <DataFields>
+                <Field field="year" selected="False" />
+                <Field field="country" selected="False" />
+                <Field field="AEZ" selected="False" />
+                <Field field="c_b" selected="True" />
+                <Field field="gro" selected="True" />
+                <Field field="ocr" selected="True" />
+                <Field field="osd" selected="True" />
+                <Field field="pdr" selected="True" />
+                <Field field="pfb" selected="True" />
+                <Field field="v_f" selected="True" />
+                <Field field="wht" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </DataFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+        </Node>
+        <Node ToolID="341">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="3690" y="163" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>&gt;=</Operator>
+                <Field>year</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2024-11-02 03:37:20</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>2009</Operand>
+                  <StartDate>2024-11-02 03:37:20</StartDate>
+                  <EndDate>2024-11-02 03:37:20</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[year] &gt;= 2009</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="200">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="4158" y="176" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <AutoResetMode>Custom</AutoResetMode>
+              <MultiMetaInfo>
+                <MetaInfo name="#1">
+                  <RecordInfo>
+                    <Field name="country" size="100" source="Summarize: GroupBy - country" type="V_WString" column="1" />
+                    <Field name="AEZ" size="2147483647" source="Summarize: GroupBy - AEZ" type="V_String" column="2" />
+                    <Field name="Crops" size="3" source="Summarize: GroupBy - Name" type="String" column="3" />
+                    <Field name="HILDA_deforestation_Ha" source="Summarize: Sum - Value" type="Double" column="4" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo name="#2">
+                  <RecordInfo>
+                    <Field name="country" size="100" source="Summarize: GroupBy - country" type="V_WString" column="1" />
+                    <Field name="AEZ" size="2147483647" source="Summarize: GroupBy - AEZ" type="V_String" column="2" />
+                    <Field name="Crops" size="1073741823" source="Formula: &quot;ctl&quot;" type="V_WString" column="3" />
+                    <Field name="Sum_Sum_Count" source="Summarize: Sum - Sum_Count" type="Int64" column="4" />
+                  </RecordInfo>
+                </MetaInfo>
+              </MultiMetaInfo>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ManualDelayed</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="305">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="65" y="942" width="1752" height="393" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>GTAPAEZ Coefficient</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>GTAPAEZ Coefficient</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="291">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="90" y="1015" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>3</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Ha_GTAP_AEZ_2019_Land_Coverage.xlsx
+Query=`Harvested_area$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Country" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
+                <Field name="Crops" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
+                <Field name="AEZ" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
+                <Field name="2019 Harvested Area" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="292">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="234" y="1015" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Country" action="GroupBy" rename="Country" />
+                <SummarizeField field="Crops" action="GroupBy" rename="Crops" />
+                <SummarizeField field="2019 Harvested Area" action="Sum" rename="Sum_2014 Harvested Area " />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="293">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="366" y="991" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Country" />
+                <Field field="Crops" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Country" />
+                <Field field="Crops" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_2019 Harvested Area" selected="True" rename="2014 Harvested Area" input="Left_" />
+                    <SelectField field="Right_Country" selected="False" rename="Right_Country" input="Right_" />
+                    <SelectField field="Right_Crops" selected="False" rename="Right_Crops" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="294">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="462" y="991" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[2014 Harvested Area]/[Sum_2014 Harvested Area ]" field="2014 Harvested Area" size="8" type="Double" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[2014 Harvested Area = [2014 Harvested Area]/[Sum_2014 Harvested Area ]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="295">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="594" y="991" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="Country" />
+                <Field field="Crops" />
+              </GroupFields>
+              <HeaderField field="AEZ" />
+              <DataField field="2014 Harvested Area" />
+              <Methods>
+                <Method method="Sum" />
+              </Methods>
+              <RetainSpecChars value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Country" size="255" source="CrossTab:Group:Sum:" type="V_String" />
+                <Field name="Crops" size="255" source="CrossTab:Group:Sum:" type="V_String" />
+                <Field name="AEZ1" source="CrossTab:Header:AEZ:AEZ1:Sum:" type="Double" />
+                <Field name="AEZ2" source="CrossTab:Header:AEZ:AEZ2:Sum:" type="Double" />
+                <Field name="AEZ3" source="CrossTab:Header:AEZ:AEZ3:Sum:" type="Double" />
+                <Field name="AEZ4" source="CrossTab:Header:AEZ:AEZ4:Sum:" type="Double" />
+                <Field name="AEZ5" source="CrossTab:Header:AEZ:AEZ5:Sum:" type="Double" />
+                <Field name="AEZ6" source="CrossTab:Header:AEZ:AEZ6:Sum:" type="Double" />
+                <Field name="AEZ7" source="CrossTab:Header:AEZ:AEZ7:Sum:" type="Double" />
+                <Field name="AEZ8" source="CrossTab:Header:AEZ:AEZ8:Sum:" type="Double" />
+                <Field name="AEZ9" source="CrossTab:Header:AEZ:AEZ9:Sum:" type="Double" />
+                <Field name="AEZ10" source="CrossTab:Header:AEZ:AEZ10:Sum:" type="Double" />
+                <Field name="AEZ11" source="CrossTab:Header:AEZ:AEZ11:Sum:" type="Double" />
+                <Field name="AEZ12" source="CrossTab:Header:AEZ:AEZ12:Sum:" type="Double" />
+                <Field name="AEZ13" source="CrossTab:Header:AEZ:AEZ13:Sum:" type="Double" />
+                <Field name="AEZ14" source="CrossTab:Header:AEZ:AEZ14:Sum:" type="Double" />
+                <Field name="AEZ15" source="CrossTab:Header:AEZ:AEZ15:Sum:" type="Double" />
+                <Field name="AEZ16" source="CrossTab:Header:AEZ:AEZ16:Sum:" type="Double" />
+                <Field name="AEZ17" source="CrossTab:Header:AEZ:AEZ17:Sum:" type="Double" />
+                <Field name="AEZ18" source="CrossTab:Header:AEZ:AEZ18:Sum:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="71">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="90" y="1159" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Area" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Year" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="GTAP code" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="SMA 3" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Sum_ha" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="72">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="330" y="1159" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="73">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="414" y="1159" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>!=</Operator>
+                <Field>GTAP code</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-11-01 21:09:43</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>ctl</Operand>
+                  <StartDate>2023-11-01 21:09:43</StartDate>
+                  <EndDate>2023-11-01 21:09:43</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[GTAP code] != "ctl"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="131">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="210" y="1159" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Area" action="GroupBy" rename="Area" />
+                <SummarizeField field="Year" action="GroupBy" rename="Year" />
+                <SummarizeField field="GTAP code" action="GroupBy" rename="GTAP code" />
+                <SummarizeField field="SMA 3" action="Sum" rename="FAO_Annual_Increment_SMA3_Ha" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="296">
+          <GuiSettings>
+            <Position x="690" y="991" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"AEZ1","AEZ2","AEZ3","AEZ4","AEZ5","AEZ6","AEZ7","AEZ8","AEZ9","AEZ10","AEZ11","AEZ12","AEZ13","AEZ14","AEZ15","AEZ16","AEZ17","AEZ18"</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="297">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="834" y="1003" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Country" />
+                <Field field="Crops" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Area" />
+                <Field field="GTAP code" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Area" selected="True" input="Right_" />
+                    <SelectField field="Right_Year" selected="True" input="Right_" />
+                    <SelectField field="Right_GTAP code" selected="True" input="Right_" />
+                    <SelectField field="Right_FAO_Annual_Increment_SMA3_Ha" selected="True" input="Right_" />
+                    <SelectField field="Left_Country" selected="False" input="Left_" />
+                    <SelectField field="Left_Crops" selected="False" input="Left_" />
+                    <SelectField field="Left_AEZ1" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ2" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ3" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ4" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ5" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ6" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ7" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ8" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ9" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ10" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ11" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ12" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ13" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ14" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ15" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ16" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ17" selected="True" input="Left_" />
+                    <SelectField field="Left_AEZ18" selected="True" input="Left_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="298">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="905" y="1003" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>Numeric</FieldType>
+              <Fields orderChanged="False">
+                <Field name="AEZ1" />
+                <Field name="AEZ2" />
+                <Field name="AEZ3" />
+                <Field name="AEZ4" />
+                <Field name="AEZ5" />
+                <Field name="AEZ6" />
+                <Field name="AEZ7" />
+                <Field name="AEZ8" />
+                <Field name="AEZ9" />
+                <Field name="AEZ10" />
+                <Field name="AEZ11" />
+                <Field name="AEZ12" />
+                <Field name="AEZ13" />
+                <Field name="AEZ14" />
+                <Field name="AEZ15" />
+                <Field name="AEZ16" />
+                <Field name="AEZ17" />
+                <Field name="AEZ18" />
+                <Field name="Year" selected="False" />
+                <Field name="FAO_Annual_Increment_SMA3_Ha" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <CopyOutput value="False" />
+              <Expression>[_CurrentField_]*[FAO_Annual_Increment_SMA3_Ha]</Expression>
+              <ChangeFieldType value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[_CurrentField_]*[FAO_Annual_Increment_SMA3_Ha]</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="299">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1014" y="1003" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="FAO_Annual_Increment_SMA3_Ha" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="300">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+            <Position x="1110" y="1003" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ErrorWarn>Warn</ErrorWarn>
+              <KeyFields>
+                <Field field="Area" />
+                <Field field="Year" />
+                <Field field="GTAP code" />
+              </KeyFields>
+              <DataFields>
+                <Field field="Area" selected="False" />
+                <Field field="Year" selected="False" />
+                <Field field="GTAP code" selected="False" />
+                <Field field="AEZ1" selected="True" />
+                <Field field="AEZ2" selected="True" />
+                <Field field="AEZ3" selected="True" />
+                <Field field="AEZ4" selected="True" />
+                <Field field="AEZ5" selected="True" />
+                <Field field="AEZ6" selected="True" />
+                <Field field="AEZ7" selected="True" />
+                <Field field="AEZ8" selected="True" />
+                <Field field="AEZ9" selected="True" />
+                <Field field="AEZ10" selected="True" />
+                <Field field="AEZ11" selected="True" />
+                <Field field="AEZ12" selected="True" />
+                <Field field="AEZ13" selected="True" />
+                <Field field="AEZ14" selected="True" />
+                <Field field="AEZ15" selected="True" />
+                <Field field="AEZ16" selected="True" />
+                <Field field="AEZ17" selected="True" />
+                <Field field="AEZ18" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </DataFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+        </Node>
+        <Node ToolID="301">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="1434" y="1003" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="Area" />
+                <Field field="Year" />
+                <Field field="Name" />
+              </GroupFields>
+              <HeaderField field="GTAP code" />
+              <DataField field="Value" />
+              <Methods>
+                <Method method="Sum" />
+              </Methods>
+              <RetainSpecChars value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Area" size="255" source="CrossTab:Group:Sum:" type="V_String" />
+                <Field name="Year" source="CrossTab:Group:Sum:" type="Double" />
+                <Field name="Name" size="5" source="CrossTab:Group:Sum:" type="String" />
+                <Field name="c_b" source="CrossTab:Header:GTAP code:c_b:Sum:" type="Double" />
+                <Field name="gro" source="CrossTab:Header:GTAP code:gro:Sum:" type="Double" />
+                <Field name="ocr" source="CrossTab:Header:GTAP code:ocr:Sum:" type="Double" />
+                <Field name="osd" source="CrossTab:Header:GTAP code:osd:Sum:" type="Double" />
+                <Field name="pdr" source="CrossTab:Header:GTAP code:pdr:Sum:" type="Double" />
+                <Field name="pfb" source="CrossTab:Header:GTAP code:pfb:Sum:" type="Double" />
+                <Field name="v_f" source="CrossTab:Header:GTAP code:v_f:Sum:" type="Double" />
+                <Field name="wht" source="CrossTab:Header:GTAP code:wht:Sum:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="302">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1229" y="1087" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Area" action="GroupBy" rename="Area" />
+                <SummarizeField field="Year" action="GroupBy" rename="Year" />
+                <SummarizeField field="Name" action="GroupBy" rename="Name" />
+                <SummarizeField field="Value" action="Sum" rename="Sum_Value" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="303">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1541" y="1015" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Area" />
+                <Field field="Year" />
+                <Field field="Name" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Area" />
+                <Field field="Year" />
+                <Field field="Name" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Area" selected="False" rename="Right_Area" input="Right_" />
+                    <SelectField field="Right_Year" selected="False" rename="Right_Year" input="Right_" />
+                    <SelectField field="Right_Name" selected="False" rename="Right_Name" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="304">
+          <GuiSettings>
+            <Position x="1733" y="1039" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"Name","Sum_Value"</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="329">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="761" y="991" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if [Country] = &quot;Brasil&quot; then &quot;Brazil&quot; else [Country] endif" field="Country" size="255" type="V_String" enabled="true" />
+                <FormulaField expression="IF [Country] = &quot;IvoryCoast&quot; then &quot;Ivory Coast&quot; else [Country] endif" field="Country" size="255" type="V_String" enabled="true" />
+                <FormulaField expression="IF [Country]= &quot;Malasya&quot; then &quot;Malaysia&quot; else [Country] endif" field="Country" size="255" type="V_String" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Country = if [Country] = "Brasil" then "Brazil" else [Country] endif
+Country = I...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="146">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="55" width="1123" height="369" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>HILDA_2009_2019_trasition_data_LU</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>HILDA_2009_2019_trasition_data_LU</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="440" y="190" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="lulc" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="lulc" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_lulc" selected="False" rename="Right_lulc" input="Right_" />
+                    <SelectField field="Right_Tyoe" selected="True" rename="Type" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="248" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\1. HILDA data\3. Split_AEZ\B-1_mapping_FAOaez_GTAPaez_V2.xlsx|||`HILDA_dynamics$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>B-1_mapping_FAOaez_GTAPaez_V2.xlsx
+Query=`HILDA_dynamics$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="lulc" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\1. HILDA data\3. Split_AEZ\B-1_mapping_FAOaez_GTAPaez_V2.xlsx|||`HILDA_dynamics$`" type="Double" />
+                <Field name="Tyoe" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\1. HILDA data\3. Split_AEZ\B-1_mapping_FAOaez_GTAPaez_V2.xlsx|||`HILDA_dynamics$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="175" y="106" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="year" selected="True" type="Int64" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="895" y="201" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="year" action="GroupBy" rename="year" />
+                <SummarizeField field="country" action="GroupBy" rename="country" />
+                <SummarizeField field="Type" action="GroupBy" rename="Type" />
+                <SummarizeField field="AEZ" action="GroupBy" rename="AEZ" />
+                <SummarizeField field="Count" action="Sum" rename="Sum_Count" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="990" y="211" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="201" y="249" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="lulc" selected="True" type="V_WString" size="19" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="297" y="104" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>&gt;</Operator>
+                <Field>year</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-11-01 18:03:15</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>2005</Operand>
+                  <StartDate>2023-11-01 18:03:15</StartDate>
+                  <EndDate>2023-11-01 18:03:15</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[year] &gt; 2005</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="309" y="249" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>NotContains</Operator>
+                <Field>lulc</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-11-02 01:16:53</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>55</Operand>
+                  <StartDate>2023-11-02 01:16:53</StartDate>
+                  <EndDate>2023-11-02 01:16:53</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!Contains([lulc],"55")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="244">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="80" y="104" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\1. HILDA data\3. Split_AEZ\C-2_HILDA_V_2_1_Transition_GTAP_AEZ_Limited.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>C-2_HILDA_V_2_1_Transition_GTAP_AEZ_Limited.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="country" size="100" source="Summarize: GroupBy - country" type="V_WString" />
+                <Field name="year" size="254" source="Summarize: GroupBy - year" type="V_String" />
+                <Field name="AEZ" size="2147483647" source="Summarize: GroupBy - AEZ" type="V_String" />
+                <Field description="TextToColumns: Parsed from LULC" name="lulc" size="254" source="Summarize: GroupBy - lulc" type="V_String" />
+                <Field name="Count" source="Summarize: Count - country" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="369">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1062" y="211" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[year] &gt;= 2010 and [year] &lt;= 2018</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[year] &gt;= 2010 and [year] &lt;= 2018</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="260">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="55" y="489" width="1118" height="334" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>HILDA_2009_2019_state_data_LU</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>HILDA_2009_2019_state_data_LU</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="246">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="453" y="599" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="lulc" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="lulc" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_lulc" selected="False" rename="Right_lulc" input="Right_" />
+                    <SelectField field="Right_Tyoe" selected="True" rename="Type" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="250">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="80" y="647" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\1. HILDA data\3. Split_AEZ\B-1_mapping_FAOaez_GTAPaez_V2.xlsx|||`HILDA_dynamics (2)$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>B-1_mapping_FAOaez_GTAPaez_V2.xlsx
+Query=`HILDA_dynamics (2)$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="lulc" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\1. HILDA data\3. Split_AEZ\B-1_mapping_FAOaez_GTAPaez_V2.xlsx|||`HILDA_dynamics (2)$`" type="Double" />
+                <Field name="Tyoe" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\1. HILDA data\3. Split_AEZ\B-1_mapping_FAOaez_GTAPaez_V2.xlsx|||`HILDA_dynamics (2)$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="251">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="189" y="539" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="year" selected="True" type="Int64" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="252">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="945" y="671" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="year" action="GroupBy" rename="year" />
+                <SummarizeField field="country" action="GroupBy" rename="country" />
+                <SummarizeField field="Type" action="GroupBy" rename="Type" />
+                <SummarizeField field="AEZ" action="GroupBy" rename="AEZ" />
+                <SummarizeField field="Count" action="Sum" rename="Sum_Count" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="253">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1089" y="671" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="255">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="201" y="647" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="lulc" selected="True" type="V_WString" size="19" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="256">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="320" y="539" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>&gt;</Operator>
+                <Field>year</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-11-01 18:03:15</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>2005</Operand>
+                  <StartDate>2023-11-01 18:03:15</StartDate>
+                  <EndDate>2023-11-01 18:03:15</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[year] &gt; 2005</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="257">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="321" y="646" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>NotContains</Operator>
+                <Field>lulc</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-11-02 01:16:53</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>55</Operand>
+                  <StartDate>2023-11-02 01:16:53</StartDate>
+                  <EndDate>2023-11-02 01:16:53</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!Contains([lulc],"55")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="245">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="81" y="538" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\1. HILDA data\3. Split_AEZ\C-2_HILDA_V_2_1_State_GTAP_AEZ_Limited.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>C-2_HILDA_V_2_1_State_GTAP_AEZ_Limited.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="country" size="100" source="Summarize: GroupBy - country" type="V_WString" />
+                <Field name="year" size="254" source="Summarize: GroupBy - year" type="V_String" />
+                <Field name="AEZ" size="2147483647" source="Summarize: GroupBy - AEZ" type="V_String" />
+                <Field description="TextToColumns: Parsed from LULC" name="lulc" size="254" source="Summarize: GroupBy - lulc" type="V_String" />
+                <Field name="Count" source="Summarize: Count - country" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="20" Connection="False" />
+      <Destination ToolID="414" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="False" />
+      <Destination ToolID="420" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="324" Connection="Output" />
+      <Destination ToolID="353" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="236" Connection="Output" />
+      <Destination ToolID="237" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="237" Connection="Output" />
+      <Destination ToolID="424" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="423" Connection="Output" />
+      <Destination ToolID="424" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="343" Connection="True" />
+      <Destination ToolID="344" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="344" Connection="Output" />
+      <Destination ToolID="350" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="349" Connection="Output" />
+      <Destination ToolID="351" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="350" Connection="Output" />
+      <Destination ToolID="336" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="350" Connection="Output" />
+      <Destination ToolID="428" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="351" Connection="Output" />
+      <Destination ToolID="352" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="352" Connection="Output" />
+      <Destination ToolID="348" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="352" Connection="Output" />
+      <Destination ToolID="429" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="353" Connection="Output" />
+      <Destination ToolID="228" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="353" Connection="Output" />
+      <Destination ToolID="427" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="400" Connection="Output" />
+      <Destination ToolID="425" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="426" Connection="Output" />
+      <Destination ToolID="425" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="402" Connection="Output" />
+      <Destination ToolID="403" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="403" Connection="True" />
+      <Destination ToolID="404" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="404" Connection="Output" />
+      <Destination ToolID="349" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="414" Connection="Output" />
+      <Destination ToolID="415" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="415" Connection="Output" />
+      <Destination ToolID="416" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="416" Connection="Output" />
+      <Destination ToolID="417" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="417" Connection="Output" />
+      <Destination ToolID="418" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="418" Connection="Output" />
+      <Destination ToolID="400" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="420" Connection="Output" />
+      <Destination ToolID="221" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="221" Connection="Output" />
+      <Destination ToolID="236" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="424" Connection="Output" />
+      <Destination ToolID="343" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="425" Connection="Output" />
+      <Destination ToolID="402" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="421" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="422" Connection="Output" />
+      <Destination ToolID="421" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="369" Connection="True" />
+      <Destination ToolID="421" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="74" Connection="True" />
+      <Destination ToolID="266" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="True" />
+      <Destination ToolID="76" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="False" />
+      <Destination ToolID="195" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="True" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="81" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="309" Connection="Output" />
+      <Destination ToolID="81" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="81" Connection="Join" />
+      <Destination ToolID="310" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="97" Connection="Output" />
+      <Destination ToolID="200" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="199" Connection="Output" />
+      <Destination ToolID="200" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="195" Connection="Output" />
+      <Destination ToolID="196" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="196" Connection="True" />
+      <Destination ToolID="197" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="197" Connection="Output" />
+      <Destination ToolID="199" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="266" Connection="Output" />
+      <Destination ToolID="75" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="306" Connection="Output" />
+      <Destination ToolID="308" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="308" Connection="Output26" />
+      <Destination ToolID="309" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="310" Connection="Output" />
+      <Destination ToolID="311" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="311" Connection="Output" />
+      <Destination ToolID="312" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="312" Connection="Output" />
+      <Destination ToolID="341" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="341" Connection="True" />
+      <Destination ToolID="97" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="200" Connection="Output" />
+      <Destination ToolID="324" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="291" Connection="Output" />
+      <Destination ToolID="292" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="291" Connection="Output" />
+      <Destination ToolID="293" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="292" Connection="Output" />
+      <Destination ToolID="293" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="293" Connection="Join" />
+      <Destination ToolID="294" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="294" Connection="Output" />
+      <Destination ToolID="295" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="295" Connection="Output" />
+      <Destination ToolID="296" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="131" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="True" />
+      <Destination ToolID="297" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="329" Connection="Output" />
+      <Destination ToolID="297" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="131" Connection="Output" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="296" Connection="Output26" />
+      <Destination ToolID="329" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="297" Connection="Join" />
+      <Destination ToolID="298" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="298" Connection="Output" />
+      <Destination ToolID="299" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="299" Connection="Output" />
+      <Destination ToolID="300" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="300" Connection="Output" />
+      <Destination ToolID="301" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="300" Connection="Output" />
+      <Destination ToolID="302" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="301" Connection="Output" />
+      <Destination ToolID="303" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="302" Connection="Output" />
+      <Destination ToolID="303" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="303" Connection="Join" />
+      <Destination ToolID="304" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="304" Connection="Output26" />
+      <Destination ToolID="306" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Join" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="369" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="True" />
+      <Destination ToolID="7" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="True" />
+      <Destination ToolID="7" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="244" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="246" Connection="Join" />
+      <Destination ToolID="252" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="250" Connection="Output" />
+      <Destination ToolID="255" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="251" Connection="Output" />
+      <Destination ToolID="256" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="252" Connection="Output" />
+      <Destination ToolID="253" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="253" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="255" Connection="Output" />
+      <Destination ToolID="257" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="256" Connection="True" />
+      <Destination ToolID="246" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="257" Connection="True" />
+      <Destination ToolID="246" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="245" Connection="Output" />
+      <Destination ToolID="251" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>A_GTAPAEZ_deforestation_coefficients_Dec_2024_def_ctl2</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="e6c10c58-07f5-45e3-bf24-92f807a831f9" />
+      <Telemetry>
+        <PreviousWorkflowId value="96b75c34-de1b-4a38-908f-6f788839145e" />
+        <OriginWorkflowId value="9dd8688b-fbd3-4e76-be28-df2588e7de78" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

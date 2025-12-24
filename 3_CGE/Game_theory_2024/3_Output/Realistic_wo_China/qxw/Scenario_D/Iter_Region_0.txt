@@ -1,5 +1,3 @@
-"colombia"
-"ghana"
+"paraguay"
 "ivorycoast"
-"peru"
-"uk"
+"ghana"

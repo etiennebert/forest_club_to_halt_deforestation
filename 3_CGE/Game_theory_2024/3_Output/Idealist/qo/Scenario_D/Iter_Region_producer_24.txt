@@ -1,3 +1,2 @@
 "argentina"
-"ivorycoast"
-"paraguay"
+"bolivia"

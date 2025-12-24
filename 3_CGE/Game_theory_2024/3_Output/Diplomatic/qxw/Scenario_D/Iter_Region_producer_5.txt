@@ -1,6 +1,1 @@
-"argentina"
 "bolivia"
-"brasil"
-"colombia"
-"ghana"
-"peru"

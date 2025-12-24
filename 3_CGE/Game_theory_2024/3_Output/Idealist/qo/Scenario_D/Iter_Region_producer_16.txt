@@ -1,3 +1,4 @@
-"angdrc"
-"ivorycoast"
-"malasya"
+"indonesia"
+"paraguay"
+"drc"
+"ghana"

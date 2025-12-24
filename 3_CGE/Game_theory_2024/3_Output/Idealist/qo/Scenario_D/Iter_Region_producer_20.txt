@@ -1,3 +1,1 @@
-"argentina"
-"malasya"
-"paraguay"
+"bolivia"

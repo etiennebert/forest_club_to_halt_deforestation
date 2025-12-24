@@ -25,9 +25,6 @@
 Query=Land_Cover</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
@@ -91,9 +88,6 @@ Query=Land_Cover</DefaultAnnotationText>
 Query=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
@@ -233,12 +227,12 @@ Query=Sheet1</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[country] = "Brazil" or [country] = "Indonesia" or [country] = "AngDRC" or [country] = "Argentina" or [country] = "Bolivia" or [country] = "Colombia" or [country] = "Ghana" or [country] = "Indonesia" or [country] = "Ivory Coast" or [country] = "Malaysia" or [country] = "Paraguay" or [country] = "Peru"</Expression>
+          <Expression>[country] = "Brazil" or [country] = "Indonesia" or [country] = "Angola" or [country] = "Argentina" or [country] = "Bolivia" or [country] = "Colombia" or [country] = "Ghana" or [country] = "Indonesia" or [country] = "Ivory Coast" or [country] = "Malaysia" or [country] = "Paraguay" or [country] = "Peru" or [country] = "DRC"</Expression>
           <Mode>Custom</Mode>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>[country] = "Brazil" or [country] = "Indonesia" or [country] = "AngDRC" or [coun...</DefaultAnnotationText>
+          <DefaultAnnotationText>[country] = "Brazil" or [country] = "Indonesia" or [country] = "Angola" or [coun...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -261,9 +255,9 @@ Query=Sheet1</DefaultAnnotationText>
               <PeriodType>
               </PeriodType>
               <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
               <StartDate>2024-11-07 15:54:31</StartDate>
               <EndDate>2024-11-07 15:54:31</EndDate>
-              <Operand>0</Operand>
             </Operands>
           </Simple>
         </Configuration>
@@ -281,12 +275,12 @@ Query=Sheet1</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[country] = "Brazil" or [country] = "Indonesia" or [country] = "AngDRC" or [country] = "Argentina" or [country] = "Bolivia" or [country] = "Colombia" or [country] = "Ghana" or [country] = "Indonesia" or [country] = "Ivory Coast" or [country] = "Malaysia" or [country] = "Paraguay" or [country] = "Peru"</Expression>
+          <Expression>[country] = "Brazil" or [country] = "Indonesia" or [country] = "Angola" or [country] = "Argentina" or [country] = "Bolivia" or [country] = "Colombia" or [country] = "Ghana" or [country] = "Indonesia" or [country] = "Ivory Coast" or [country] = "Malaysia" or [country] = "Paraguay" or [country] = "Peru" or [country] = "DRC"</Expression>
           <Mode>Custom</Mode>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>[country] = "Brazil" or [country] = "Indonesia" or [country] = "AngDRC" or [coun...</DefaultAnnotationText>
+          <DefaultAnnotationText>[country] = "Brazil" or [country] = "Indonesia" or [country] = "Angola" or [coun...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -309,9 +303,9 @@ Query=Sheet1</DefaultAnnotationText>
               <PeriodType>
               </PeriodType>
               <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
               <StartDate>2024-11-07 15:54:58</StartDate>
               <EndDate>2024-11-07 15:54:58</EndDate>
-              <Operand>0</Operand>
             </Operands>
           </Simple>
         </Configuration>
@@ -323,9 +317,46 @@ Query=Sheet1</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
+    <Node ToolID="433">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2190" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="country" action="CountDistinct" rename="CountDistinct_country" />
+            <SummarizeField field="country" action="GroupBy" rename="country" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="434">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1914" y="942" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="country" action="CountDistinct" rename="CountDistinct_country" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
     <Node ToolID="305">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="54" width="1262" height="392" />
+        <Position x="53" y="53" width="1263" height="512" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -344,12 +375,12 @@ Query=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="291">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79" y="127" />
+            <Position x="79" y="126" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`</File>
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`</File>
               <FormatSpecificOptions>
                 <FirstRowData>False</FirstRowData>
                 <ImportLine>3</ImportLine>
@@ -357,16 +388,19 @@ Query=Sheet1</DefaultAnnotationText>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>Ha_GTAP_AEZ_2014_Land_Coverage.xlsx
+              <DefaultAnnotationText>Ha_GTAP_AEZ_2019_Land_Coverage.xlsx
 Query=`Harvested_area$`</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="Country" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
-                <Field name="Crops" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
-                <Field name="AEZ" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
-                <Field name="2014 Harvested Area " source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2014_Land_Coverage.xlsx|||`Harvested_area$`" type="Double" />
+                <Field name="Country" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
+                <Field name="Crops" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
+                <Field name="AEZ" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="V_String" />
+                <Field name="2019 Harvested Area" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\3. GTAPAEZ_Deforestation_coefficient\1. GTAPAEZ_Data\Ha_GTAP_AEZ_2019_Land_Coverage.xlsx|||`Harvested_area$`" type="Double" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -374,14 +408,14 @@ Query=`Harvested_area$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="292">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="223" y="127" />
+            <Position x="223" y="126" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <SummarizeFields>
                 <SummarizeField field="Country" action="GroupBy" rename="Country" />
                 <SummarizeField field="Crops" action="GroupBy" rename="Crops" />
-                <SummarizeField field="2014 Harvested Area " action="Sum" rename="Sum_2014 Harvested Area " />
+                <SummarizeField field="2019 Harvested Area" action="Sum" rename="Sum_2014 Harvested Area" />
               </SummarizeFields>
             </Configuration>
             <Annotation DisplayMode="0">
@@ -394,7 +428,7 @@ Query=`Harvested_area$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="293">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="356" y="103" />
+            <Position x="356" y="102" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -411,6 +445,7 @@ Query=`Harvested_area$`</DefaultAnnotationText>
                   <OrderChanged value="False" />
                   <CommaDecimal value="False" />
                   <SelectFields>
+                    <SelectField field="Left_2019 Harvested Area" selected="True" rename="2014 Harvested Area" input="Left_" />
                     <SelectField field="Right_Country" selected="False" rename="Right_Country" input="Right_" />
                     <SelectField field="Right_Crops" selected="False" rename="Right_Crops" input="Right_" />
                     <SelectField field="*Unknown" selected="True" />
@@ -428,17 +463,17 @@ Query=`Harvested_area$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="294">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="452" y="103" />
+            <Position x="451" y="102" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <FormulaFields>
-                <FormulaField expression="[2014 Harvested Area ]/[Sum_2014 Harvested Area ]" field="2014 Harvested Area " size="8" type="Double" enabled="true" />
+                <FormulaField expression="[2014 Harvested Area]/[Sum_2014 Harvested Area]" field="2014 Harvested Area" size="8" type="Double" enabled="true" />
               </FormulaFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText><![CDATA[2014 Harvested Area  = [2014 Harvested Area ]/[Sum_2014 Harvested Area ]
+              <DefaultAnnotationText><![CDATA[2014 Harvested Area = [2014 Harvested Area]/[Sum_2014 Harvested Area]
 ]]></DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
@@ -456,10 +491,11 @@ Query=`Harvested_area$`</DefaultAnnotationText>
                 <Field field="Crops" />
               </GroupFields>
               <HeaderField field="AEZ" />
-              <DataField field="2014 Harvested Area " />
+              <DataField field="2014 Harvested Area" />
               <Methods>
                 <Method method="Sum" />
               </Methods>
+              <RetainSpecChars value="False" />
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -492,42 +528,6 @@ Query=`Harvested_area$`</DefaultAnnotationText>
             </MetaInfo>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
-        </Node>
-        <Node ToolID="71">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79" y="270" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`</File>
-              <FormatSpecificOptions>
-                <FirstRowData>False</FirstRowData>
-                <ImportLine>1</ImportLine>
-              </FormatSpecificOptions>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx
-Query=`Sheet1$`</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Area Code (M49)" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="FAO" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Area" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Year" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="GTAP code" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="ID" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="SMA 3" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Ratio total SMA 3 annual evolution" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Positive area annual evolution" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Sum_ha" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\MRIOS\2022 IATRC Annual meeting\Full_article\1. Data\2. FAO data\A-3_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
         </Node>
         <Node ToolID="72">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
@@ -768,7 +768,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="302">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="1220" y="127" />
+            <Position x="1220" y="126" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -941,6 +941,40 @@ Country = I...</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
         </Node>
+        <Node ToolID="432">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="78" y="390" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Area" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Year" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="GTAP code" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="SMA 3" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Sum_ha" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\Deforestation_Nature\Forest_Club_SI\1. Data\2. FAO data\A-4_Output_FAO_annual_evolution_per_sector_GTAP.xlsx|||`Sheet1$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
       </ChildNodes>
     </Node>
   </Nodes>
@@ -986,12 +1020,20 @@ Country = I...</DefaultAnnotationText>
       <Destination ToolID="348" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="429" Connection="True" />
+      <Destination ToolID="433" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="430" Connection="True" />
       <Destination ToolID="431" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="431" Connection="True" />
       <Destination ToolID="336" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="431" Connection="True" />
+      <Destination ToolID="434" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="291" Connection="Output" />
@@ -1016,10 +1058,6 @@ Country = I...</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="295" Connection="Output" />
       <Destination ToolID="296" Connection="Input2" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="71" Connection="Output" />
-      <Destination ToolID="131" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="72" Connection="Output" />
@@ -1076,6 +1114,10 @@ Country = I...</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="427" Connection="Output" />
       <Destination ToolID="343" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="432" Connection="Output" />
+      <Destination ToolID="131" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

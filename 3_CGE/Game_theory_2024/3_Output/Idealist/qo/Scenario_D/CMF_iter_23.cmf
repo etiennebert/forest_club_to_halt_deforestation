@@ -1,154 +1,73 @@
-! ---------------
-! .TAB file Model name
-Auxiliary files = gtapaez ;
-
-structurally singular solve modified equations = yes ;
-
-XSet MERCOSUR (Argentina, Bolivia, Brasil, Colombia, Paraguay, Peru, Uruguay, Venezuela); 
-XSubset MERCOSUR is subset of REG;
-XSet WORLD (Madagascar,Mozambique,Myanmar, Nigeria, NewZealand, Oceania, China, Japan, 
-Korea, India, EastAsia, SEAsia, SouthAsia, US, Canada, Mexico, LatinAmer, EU27, UK, 
-Russia, EFTA, MENA, SSA, RestofWorld); 
-XSubset WORLD is subset of REG;
-
-XSet SET1 (EU27,UK,EFTA); 
-XSubset SET1 is subset of REG;
-
-XSet SET2 (US,EU27,UK,EFTA); 
-XSubset SET2 is subset of REG;
-
-XSet SET3 (china,US,EU27,UK,EFTA); 
-XSubset SET3 is subset of REG;
-
-XSet SET4 (china,US,EU27,UK,EFTA,mena); 
-XSubset SET4 is subset of REG;
-
+! This Command file
+! C:runGTAP375workNATDEF.cmf
+! was written by RunGTAP (Version 3.75 built 23/May/2022)
+! If a version has no CMFSTART file of its own
+! RunGTAP creates one by copying the supplied file CMFSTART.DEF
+CPU = yes;  ! log show simulation times
+NDS = yes;  ! no displays
+Extrapolation accuracy file = YES ; ! XAC file
+!servants=1; ! use 2 processors at once, if possible
+file GTAPSUM = inSUMMARY.har;
+file WELVIEW = inDECOMP.har;
+file GTAPVOL = inGTAPVOL.har;
+!@ end of CMFSTART part
 
 ! Tell the model the data, parameters and sets - start
 ! Original Data files
 ! -------------------
-!
-File gtapDATA = inbasedata.har ; !  file containing all base data
-File gtapPARM = indefault.prm ; !  file containing all parameters
-File gtapSETS = insets.har ; !  file containing all sets & each of their elements
-!
+file gtapDATA = inbasedata.har;
+file gtapPARM = indefault.prm;
+file gtapSETS = insets.har;
 
 ! Tell the model where to store the model sims - start
 ! Output files
 ! ------------
 !
-Solution file = C:runGTAP375Game_theory_20242_ModelNATDEF.sl4;
-Updated file gtapDATA = C:runGTAP375Game_theory_20242_Modelgdata.upd;
 
-! Tell the model the closure - start
-!  STANDARD CLOSURE STATEMENTS
-! ---- Demand Drivers 
+Updated file gtapDATA = C:runGTAP375Game_theory_20242_Model_R1gdata.upd;
+Solution file = C:runGTAP375Game_theory_20242_Model_R1NATDEF.sl4;
 
-Exogenous pop ;
-Exogenous psaveslack ; 
-Exogenous pfactwld ;   
- 
-Exogenous profitslack ; 
-Exogenous incomeslack ;
-Exogenous endwslack;  
-  
-Exogenous cgdslack ;
-Exogenous tradslack ;     
-    
-Exogenous ams ;
-Exogenous atm ; 
-Exogenous atf ; 
-Exogenous ats ;
-Exogenous atd ;   
-    
-Exogenous aosec ;
-Exogenous aoreg ;
-Exogenous avasec ;
-Exogenous avareg ;
+Auxiliary files = GTAPV7-AEZ ;
 
-Exogenous afcom;          
-Exogenous afsec ;
-Exogenous afreg ;
-Exogenous afecom ;
-Exogenous afesec ;
-Exogenous afereg;   
-   
-Exogenous aoall ;
-Exogenous afall ;
-Exogenous afeall;  
-      
-Exogenous au ;
-Exogenous dppriv ;
-Exogenous dpgov ;
-Exogenous dpsave;  
-      
-Exogenous to ;
-Exogenous tp ;
-Exogenous tpd ;
-Exogenous tm ;
-Exogenous tms ;
-Exogenous tx ;
-Exogenous txs ;
-
-Exogenous tfd_f ;
-Exogenous tmf_f ;
-Exogenous tms_f;     
-   
-Exogenous qo(ENDW_COMM,REG); 
-Exogenous p_LANDCOVER_L(AEZ_COMM,UNMNGLAND,REG);
-
-REST Endogenous;  ! Declare all other variables as endogenous (calculated within the model)
-
-! Tell the model the closure - end
-
-!
-! Verbal description
-! ------------------
-Verbal Description = <cmf>;
-
-!
-! Solution method
-! ---------------
-!
+Verbal Description =
+Initial tariff applied per EU on all deforestation countries;
 Method = Euler;
-
-
-LU decompose transpose = yes;
-
-log file = yes ;
-
-!
-! Miscellaneous info
-! ------------------
-!
-automatic accuracy = no;
 Steps = 2 4;
-subintervals = 3;
-!accuracy figures = 2;
+automatic accuracy = no;
+!accuracy figures = 4;
 !accuracy percent = 80;
-!minimum subinterval length =  1.0E-6;
+!minimum subinterval length =  1.0E-0003;
 !minimum subinterval fails = stop;
-!accuracy criterion = data;
-!
+!accuracy criterion = Data;
+subintervals = 3;
 
-! Shocks - start
+! basic closure
+Exogenous
+          pop
+          psaveslack pfactwld
+          profitslack incomeslack endwslack
+          cgdslack 
+          tradslack
+          ams atm atf ats atd
+          aosec aoreg avasec avareg
+          aintsec aintreg aintall
+          afcom afsec afreg afecom afesec afereg
+          aoall afall afeall
+          au dppriv dpgov dpsave
+          to tinc
+          tpreg tm tms tx txs
+          tfd_f tmf_f tms_f
+          qe
+          qesf
+! GTAP-AEZ: Additional exogenous variables
+          p_UNMGLANDF  ! AEZS*UNMGL*REG   supply of unmanaged land cover e in r
 
-!swap DTBALR = dpsave;
-!swap DTBALR(restofworld) = dpsave(restofworld);
-!Shock tms_f =  file TMSF.har header 0101;
+          ;
+Rest endogenous;
 
 ! Part for productivity shocks;
 Shock tms_f =  file NATDEF.har header 0101;
 ! Part for productivity shocks from R;
-swap qo(sgr,bolivia) = aoall(sgr,bolivia);
-swap qo(ruminant,bolivia) = aoall(ruminant,bolivia);
-swap qo(gro,bolivia) = aoall(gro,bolivia);
-swap qo(ocr,bolivia) = aoall(ocr,bolivia);
-swap qo(osd,bolivia) = aoall(osd,bolivia);
-swap qo(pcr,bolivia) = aoall(pcr,bolivia);
-swap qo(pfb,bolivia) = aoall(pfb,bolivia);
-swap qo(v_f,bolivia) = aoall(v_f,bolivia);
-swap qo(wht,bolivia) = aoall(wht,bolivia);
 swap qo(sgr,brasil) = aoall(sgr,brasil);
 swap qo(ruminant,brasil) = aoall(ruminant,brasil);
 swap qo(gro,brasil) = aoall(gro,brasil);
@@ -158,33 +77,6 @@ swap qo(pcr,brasil) = aoall(pcr,brasil);
 swap qo(pfb,brasil) = aoall(pfb,brasil);
 swap qo(v_f,brasil) = aoall(v_f,brasil);
 swap qo(wht,brasil) = aoall(wht,brasil);
-swap qo(sgr,colombia) = aoall(sgr,colombia);
-swap qo(ruminant,colombia) = aoall(ruminant,colombia);
-swap qo(gro,colombia) = aoall(gro,colombia);
-swap qo(ocr,colombia) = aoall(ocr,colombia);
-swap qo(osd,colombia) = aoall(osd,colombia);
-swap qo(pcr,colombia) = aoall(pcr,colombia);
-swap qo(pfb,colombia) = aoall(pfb,colombia);
-swap qo(v_f,colombia) = aoall(v_f,colombia);
-swap qo(wht,colombia) = aoall(wht,colombia);
-swap qo(sgr,ghana) = aoall(sgr,ghana);
-swap qo(ruminant,ghana) = aoall(ruminant,ghana);
-swap qo(gro,ghana) = aoall(gro,ghana);
-swap qo(ocr,ghana) = aoall(ocr,ghana);
-swap qo(osd,ghana) = aoall(osd,ghana);
-swap qo(pcr,ghana) = aoall(pcr,ghana);
-swap qo(pfb,ghana) = aoall(pfb,ghana);
-swap qo(v_f,ghana) = aoall(v_f,ghana);
-swap qo(wht,ghana) = aoall(wht,ghana);
-swap qo(sgr,ivorycoast) = aoall(sgr,ivorycoast);
-swap qo(ruminant,ivorycoast) = aoall(ruminant,ivorycoast);
-swap qo(gro,ivorycoast) = aoall(gro,ivorycoast);
-swap qo(ocr,ivorycoast) = aoall(ocr,ivorycoast);
-swap qo(osd,ivorycoast) = aoall(osd,ivorycoast);
-swap qo(pcr,ivorycoast) = aoall(pcr,ivorycoast);
-swap qo(pfb,ivorycoast) = aoall(pfb,ivorycoast);
-swap qo(v_f,ivorycoast) = aoall(v_f,ivorycoast);
-swap qo(wht,ivorycoast) = aoall(wht,ivorycoast);
 swap qo(sgr,indonesia) = aoall(sgr,indonesia);
 swap qo(ruminant,indonesia) = aoall(ruminant,indonesia);
 swap qo(gro,indonesia) = aoall(gro,indonesia);
@@ -194,6 +86,24 @@ swap qo(pcr,indonesia) = aoall(pcr,indonesia);
 swap qo(pfb,indonesia) = aoall(pfb,indonesia);
 swap qo(v_f,indonesia) = aoall(v_f,indonesia);
 swap qo(wht,indonesia) = aoall(wht,indonesia);
+swap qo(sgr,colombia) = aoall(sgr,colombia);
+swap qo(ruminant,colombia) = aoall(ruminant,colombia);
+swap qo(gro,colombia) = aoall(gro,colombia);
+swap qo(ocr,colombia) = aoall(ocr,colombia);
+swap qo(osd,colombia) = aoall(osd,colombia);
+swap qo(pcr,colombia) = aoall(pcr,colombia);
+swap qo(pfb,colombia) = aoall(pfb,colombia);
+swap qo(v_f,colombia) = aoall(v_f,colombia);
+swap qo(wht,colombia) = aoall(wht,colombia);
+swap qo(sgr,paraguay) = aoall(sgr,paraguay);
+swap qo(ruminant,paraguay) = aoall(ruminant,paraguay);
+swap qo(gro,paraguay) = aoall(gro,paraguay);
+swap qo(ocr,paraguay) = aoall(ocr,paraguay);
+swap qo(osd,paraguay) = aoall(osd,paraguay);
+swap qo(pcr,paraguay) = aoall(pcr,paraguay);
+swap qo(pfb,paraguay) = aoall(pfb,paraguay);
+swap qo(v_f,paraguay) = aoall(v_f,paraguay);
+swap qo(wht,paraguay) = aoall(wht,paraguay);
 swap qo(sgr,peru) = aoall(sgr,peru);
 swap qo(ruminant,peru) = aoall(ruminant,peru);
 swap qo(gro,peru) = aoall(gro,peru);
@@ -203,66 +113,102 @@ swap qo(pcr,peru) = aoall(pcr,peru);
 swap qo(pfb,peru) = aoall(pfb,peru);
 swap qo(v_f,peru) = aoall(v_f,peru);
 swap qo(wht,peru) = aoall(wht,peru);
-Shock qo(sgr,bolivia) = -28.1789717598912;
-Shock qo(ruminant,bolivia) = -2.31186192999841;
-Shock qo(gro,bolivia) = -25.5210490975077;
-Shock qo(ocr,bolivia) = -27.6643644799258;
-Shock qo(osd,bolivia) = -29.6357709034704;
-Shock qo(pcr,bolivia) = -26.3593346975319;
-Shock qo(pfb,bolivia) = -27.4325490652349;
-Shock qo(v_f,bolivia) = -26.815275725536;
-Shock qo(wht,bolivia) = -29.4560252128539;
-Shock qo(sgr,brasil) = -3.99836906098972;
-Shock qo(ruminant,brasil) = -4.17478203509982;
-Shock qo(gro,brasil) = -4.04804783642754;
-Shock qo(ocr,brasil) = -2.1369491062588;
-Shock qo(osd,brasil) = -1.34353994449157;
-Shock qo(pcr,brasil) = -4.09666557987969;
-Shock qo(pfb,brasil) = -3.56508954889826;
-Shock qo(v_f,brasil) = -3.1317677232941;
-Shock qo(wht,brasil) = -3.46784429436304;
-Shock qo(sgr,colombia) = -4.55260104856845;
-Shock qo(ruminant,colombia) = -1.60007199398787;
-Shock qo(gro,colombia) = -3.96543577966846;
-Shock qo(ocr,colombia) = -4.46672823555652;
-Shock qo(osd,colombia) = -4.46694889902048;
-Shock qo(pcr,colombia) = -4.5220455203609;
-Shock qo(pfb,colombia) = -3.24216152474725;
-Shock qo(v_f,colombia) = -4.15030553614782;
-Shock qo(wht,colombia) = -2.57734549793325;
-Shock qo(sgr,ghana) = 0;
-Shock qo(ruminant,ghana) = -1.28546400493112;
-Shock qo(gro,ghana) = -2.05221723716229;
-Shock qo(ocr,ghana) = -52.5397090073776;
-Shock qo(osd,ghana) = -44.0183516380187;
-Shock qo(pcr,ghana) = -35.5271339014515;
-Shock qo(pfb,ghana) = -1.49027527360355;
-Shock qo(v_f,ghana) = -61.1266037436446;
-Shock qo(wht,ghana) = 0;
-Shock qo(sgr,ivorycoast) = -8.52039301430795;
-Shock qo(ruminant,ivorycoast) = -1.89206394115151;
-Shock qo(gro,ivorycoast) = -7.34390185123975;
-Shock qo(ocr,ivorycoast) = -9.56538955287239;
-Shock qo(osd,ivorycoast) = -8.59836828406328;
-Shock qo(pcr,ivorycoast) = -8.60226657772979;
-Shock qo(pfb,ivorycoast) = -8.53606689856389;
-Shock qo(v_f,ivorycoast) = -9.18652795190195;
-Shock qo(wht,ivorycoast) = 0;
-Shock qo(sgr,indonesia) = -4.51051750482263;
-Shock qo(ruminant,indonesia) = -2.35957429017231;
-Shock qo(gro,indonesia) = -9.68683435201811;
-Shock qo(ocr,indonesia) = -8.3098121343732;
-Shock qo(osd,indonesia) = -7.90569345655905;
-Shock qo(pcr,indonesia) = -9.63237154202585;
-Shock qo(pfb,indonesia) = -5.24359199391467;
-Shock qo(v_f,indonesia) = -6.85401833030929;
+swap qo(sgr,angola) = aoall(sgr,angola);
+swap qo(ruminant,angola) = aoall(ruminant,angola);
+swap qo(gro,angola) = aoall(gro,angola);
+swap qo(ocr,angola) = aoall(ocr,angola);
+swap qo(osd,angola) = aoall(osd,angola);
+swap qo(pcr,angola) = aoall(pcr,angola);
+swap qo(pfb,angola) = aoall(pfb,angola);
+swap qo(v_f,angola) = aoall(v_f,angola);
+swap qo(wht,angola) = aoall(wht,angola);
+swap qo(sgr,ivorycoast) = aoall(sgr,ivorycoast);
+swap qo(ruminant,ivorycoast) = aoall(ruminant,ivorycoast);
+swap qo(gro,ivorycoast) = aoall(gro,ivorycoast);
+swap qo(ocr,ivorycoast) = aoall(ocr,ivorycoast);
+swap qo(osd,ivorycoast) = aoall(osd,ivorycoast);
+swap qo(pcr,ivorycoast) = aoall(pcr,ivorycoast);
+swap qo(pfb,ivorycoast) = aoall(pfb,ivorycoast);
+swap qo(v_f,ivorycoast) = aoall(v_f,ivorycoast);
+swap qo(wht,ivorycoast) = aoall(wht,ivorycoast);
+swap qo(sgr,ghana) = aoall(sgr,ghana);
+swap qo(ruminant,ghana) = aoall(ruminant,ghana);
+swap qo(gro,ghana) = aoall(gro,ghana);
+swap qo(ocr,ghana) = aoall(ocr,ghana);
+swap qo(osd,ghana) = aoall(osd,ghana);
+swap qo(pcr,ghana) = aoall(pcr,ghana);
+swap qo(pfb,ghana) = aoall(pfb,ghana);
+swap qo(v_f,ghana) = aoall(v_f,ghana);
+swap qo(wht,ghana) = aoall(wht,ghana);
+Shock qo(sgr,brasil) = -1.67233767949624;
+Shock qo(ruminant,brasil) = -1.91960790049249;
+Shock qo(gro,brasil) = -2.75589858485727;
+Shock qo(ocr,brasil) = -0.160464131033073;
+Shock qo(osd,brasil) = -4.11528966178195;
+Shock qo(pcr,brasil) = -0.324156057026354;
+Shock qo(pfb,brasil) = -5.28710235961433;
+Shock qo(v_f,brasil) = -0.455116296993773;
+Shock qo(wht,brasil) = -4.30821981506779;
+Shock qo(sgr,indonesia) = -4.02463644516526;
+Shock qo(ruminant,indonesia) = -2.21780359929719;
+Shock qo(gro,indonesia) = -10.4427801912508;
+Shock qo(ocr,indonesia) = -3.01687531568011;
+Shock qo(osd,indonesia) = -18.7408779434365;
+Shock qo(pcr,indonesia) = -1.06772113234079;
+Shock qo(pfb,indonesia) = -41.4910488260658;
+Shock qo(v_f,indonesia) = -1.52063944315971;
 Shock qo(wht,indonesia) = 0;
-Shock qo(sgr,peru) = -1.70116266824395;
-Shock qo(ruminant,peru) = -7.17911403289531;
-Shock qo(gro,peru) = -2.02736955167968;
-Shock qo(ocr,peru) = -5.03833072354754;
-Shock qo(osd,peru) = -1.66295350532714;
-Shock qo(pcr,peru) = -1.67942082271774;
-Shock qo(pfb,peru) = -1.24238798338393;
-Shock qo(v_f,peru) = -1.78303799189343;
-Shock qo(wht,peru) = -1.61559740404387;
+Shock qo(sgr,colombia) = -5.80837337991601;
+Shock qo(ruminant,colombia) = -1.86735562841864;
+Shock qo(gro,colombia) = -6.52496021470187;
+Shock qo(ocr,colombia) = -4.8699812692597;
+Shock qo(osd,colombia) = -20.8594932560012;
+Shock qo(pcr,colombia) = -8.04269112882153;
+Shock qo(pfb,colombia) = -4.18223893726233;
+Shock qo(v_f,colombia) = -6.77104320086869;
+Shock qo(wht,colombia) = -26.2090245549756;
+Shock qo(sgr,paraguay) = -6.64056814363647;
+Shock qo(ruminant,paraguay) = -0.407239662336554;
+Shock qo(gro,paraguay) = -18.6473039782644;
+Shock qo(ocr,paraguay) = -8.44420765829855;
+Shock qo(osd,paraguay) = -9.93624321506029;
+Shock qo(pcr,paraguay) = -47.7013350033843;
+Shock qo(pfb,paraguay) = -26.076203140711;
+Shock qo(v_f,paraguay) = -3.73838986162487;
+Shock qo(wht,paraguay) = -8.30961855085653;
+Shock qo(sgr,peru) = -6.45718402540648;
+Shock qo(ruminant,peru) = -4.68697795113589;
+Shock qo(gro,peru) = -2.49525629529072;
+Shock qo(ocr,peru) = -15.3736177279787;
+Shock qo(osd,peru) = -21.6776126003181;
+Shock qo(pcr,peru) = -5.31756074430098;
+Shock qo(pfb,peru) = -24.7290644124698;
+Shock qo(v_f,peru) = -2.48731618327204;
+Shock qo(wht,peru) = -2.97962986417088;
+Shock qo(sgr,angola) = -3.25928161652946;
+Shock qo(ruminant,angola) = -10.3336857201162;
+Shock qo(gro,angola) = -22.3948192711474;
+Shock qo(ocr,angola) = -3.53308115941727;
+Shock qo(osd,angola) = -2.01259726214166;
+Shock qo(pcr,angola) = -4.46286223690614;
+Shock qo(pfb,angola) = -1.66872583399816;
+Shock qo(v_f,angola) = -2.75987748048514;
+Shock qo(wht,angola) = -1.00508114256738;
+Shock qo(sgr,ivorycoast) = -7.51186989934635;
+Shock qo(ruminant,ivorycoast) = -0.479716679781462;
+Shock qo(gro,ivorycoast) = -2.57793825071984;
+Shock qo(ocr,ivorycoast) = -25.0595885845658;
+Shock qo(osd,ivorycoast) = -7.28322588435519;
+Shock qo(pcr,ivorycoast) = -11.4802738669402;
+Shock qo(pfb,ivorycoast) = -15.6107062311664;
+Shock qo(v_f,ivorycoast) = -11.5082533036973;
+Shock qo(wht,ivorycoast) = 0;
+Shock qo(sgr,ghana) = -8.22289865462056;
+Shock qo(ruminant,ghana) = -1.0104755651357;
+Shock qo(gro,ghana) = -1.06358688077863;
+Shock qo(ocr,ghana) = -8.96095721444909;
+Shock qo(osd,ghana) = -12.100729048226;
+Shock qo(pcr,ghana) = -26.4517754867878;
+Shock qo(pfb,ghana) = -26.4259744326548;
+Shock qo(v_f,ghana) = -10.7615992436893;
+Shock qo(wht,ghana) = 0;

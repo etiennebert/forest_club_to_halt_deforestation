@@ -1,145 +1,91 @@
-! ---------------
-! .TAB file Model name
-Auxiliary files = gtapaez ;
-
-structurally singular solve modified equations = yes ;
-
-XSet MERCOSUR (Argentina, Bolivia, Brasil, Colombia, Paraguay, Peru, Uruguay, Venezuela); 
-XSubset MERCOSUR is subset of REG;
-XSet WORLD (Madagascar,Mozambique,Myanmar, Nigeria, NewZealand, Oceania, China, Japan, 
-Korea, India, EastAsia, SEAsia, SouthAsia, US, Canada, Mexico, LatinAmer, EU27, UK, 
-Russia, EFTA, MENA, SSA, RestofWorld); 
-XSubset WORLD is subset of REG;
-
-XSet SET1 (EU27,UK,EFTA); 
-XSubset SET1 is subset of REG;
-
-XSet SET2 (US,EU27,UK,EFTA); 
-XSubset SET2 is subset of REG;
-
-XSet SET3 (china,US,EU27,UK,EFTA); 
-XSubset SET3 is subset of REG;
-
-XSet SET4 (china,US,EU27,UK,EFTA,mena); 
-XSubset SET4 is subset of REG;
-
+! This Command file
+! C:runGTAP375workNATDEF.cmf
+! was written by RunGTAP (Version 3.75 built 23/May/2022)
+! If a version has no CMFSTART file of its own
+! RunGTAP creates one by copying the supplied file CMFSTART.DEF
+CPU = yes;  ! log show simulation times
+NDS = yes;  ! no displays
+Extrapolation accuracy file = YES ; ! XAC file
+!servants=1; ! use 2 processors at once, if possible
+file GTAPSUM = inSUMMARY.har;
+file WELVIEW = inDECOMP.har;
+file GTAPVOL = inGTAPVOL.har;
+!@ end of CMFSTART part
 
 ! Tell the model the data, parameters and sets - start
 ! Original Data files
 ! -------------------
-!
-File gtapDATA = inbasedata.har ; !  file containing all base data
-File gtapPARM = indefault.prm ; !  file containing all parameters
-File gtapSETS = insets.har ; !  file containing all sets & each of their elements
-!
+file gtapDATA = inbasedata.har;
+file gtapPARM = indefault.prm;
+file gtapSETS = insets.har;
 
 ! Tell the model where to store the model sims - start
 ! Output files
 ! ------------
 !
-Solution file = C:runGTAP375Game_theory_20242_ModelNATDEF.sl4;
-Updated file gtapDATA = C:runGTAP375Game_theory_20242_Modelgdata.upd;
 
-! Tell the model the closure - start
-!  STANDARD CLOSURE STATEMENTS
-! ---- Demand Drivers 
+Updated file gtapDATA = C:runGTAP375Game_theory_20242_Model_R1gdata.upd;
+Solution file = C:runGTAP375Game_theory_20242_Model_R1NATDEF.sl4;
 
-Exogenous pop ;
-Exogenous psaveslack ; 
-Exogenous pfactwld ;   
- 
-Exogenous profitslack ; 
-Exogenous incomeslack ;
-Exogenous endwslack;  
-  
-Exogenous cgdslack ;
-Exogenous tradslack ;     
-    
-Exogenous ams ;
-Exogenous atm ; 
-Exogenous atf ; 
-Exogenous ats ;
-Exogenous atd ;   
-    
-Exogenous aosec ;
-Exogenous aoreg ;
-Exogenous avasec ;
-Exogenous avareg ;
+Auxiliary files = GTAPV7-AEZ ;
 
-Exogenous afcom;          
-Exogenous afsec ;
-Exogenous afreg ;
-Exogenous afecom ;
-Exogenous afesec ;
-Exogenous afereg;   
-   
-Exogenous aoall ;
-Exogenous afall ;
-Exogenous afeall;  
-      
-Exogenous au ;
-Exogenous dppriv ;
-Exogenous dpgov ;
-Exogenous dpsave;  
-      
-Exogenous to ;
-Exogenous tp ;
-Exogenous tpd ;
-Exogenous tm ;
-Exogenous tms ;
-Exogenous tx ;
-Exogenous txs ;
-
-Exogenous tfd_f ;
-Exogenous tmf_f ;
-Exogenous tms_f;     
-   
-Exogenous qo(ENDW_COMM,REG); 
-Exogenous p_LANDCOVER_L(AEZ_COMM,UNMNGLAND,REG);
-
-REST Endogenous;  ! Declare all other variables as endogenous (calculated within the model)
-
-! Tell the model the closure - end
-
-!
-! Verbal description
-! ------------------
-Verbal Description = <cmf>;
-
-!
-! Solution method
-! ---------------
-!
+Verbal Description =
+Initial tariff applied per EU on all deforestation countries;
 Method = Euler;
-
-
-LU decompose transpose = yes;
-
-log file = yes ;
-
-!
-! Miscellaneous info
-! ------------------
-!
-automatic accuracy = no;
 Steps = 2 4;
-subintervals = 3;
-!accuracy figures = 2;
+automatic accuracy = no;
+!accuracy figures = 4;
 !accuracy percent = 80;
-!minimum subinterval length =  1.0E-6;
+!minimum subinterval length =  1.0E-0003;
 !minimum subinterval fails = stop;
-!accuracy criterion = data;
-!
+!accuracy criterion = Data;
+subintervals = 3;
 
-! Shocks - start
+! basic closure
+Exogenous
+          pop
+          psaveslack pfactwld
+          profitslack incomeslack endwslack
+          cgdslack 
+          tradslack
+          ams atm atf ats atd
+          aosec aoreg avasec avareg
+          aintsec aintreg aintall
+          afcom afsec afreg afecom afesec afereg
+          aoall afall afeall
+          au dppriv dpgov dpsave
+          to tinc
+          tpreg tm tms tx txs
+          tfd_f tmf_f tms_f
+          qe
+          qesf
+! GTAP-AEZ: Additional exogenous variables
+          p_UNMGLANDF  ! AEZS*UNMGL*REG   supply of unmanaged land cover e in r
 
-!swap DTBALR = dpsave;
-!swap DTBALR(restofworld) = dpsave(restofworld);
-!Shock tms_f =  file TMSF.har header 0101;
+          ;
+Rest endogenous;
 
 ! Part for productivity shocks;
 Shock tms_f =  file NATDEF.har header 0101;
 ! Part for productivity shocks from R;
+swap qo(sgr,argentina) = aoall(sgr,argentina);
+swap qo(ruminant,argentina) = aoall(ruminant,argentina);
+swap qo(gro,argentina) = aoall(gro,argentina);
+swap qo(ocr,argentina) = aoall(ocr,argentina);
+swap qo(osd,argentina) = aoall(osd,argentina);
+swap qo(pcr,argentina) = aoall(pcr,argentina);
+swap qo(pfb,argentina) = aoall(pfb,argentina);
+swap qo(v_f,argentina) = aoall(v_f,argentina);
+swap qo(wht,argentina) = aoall(wht,argentina);
+swap qo(sgr,brasil) = aoall(sgr,brasil);
+swap qo(ruminant,brasil) = aoall(ruminant,brasil);
+swap qo(gro,brasil) = aoall(gro,brasil);
+swap qo(ocr,brasil) = aoall(ocr,brasil);
+swap qo(osd,brasil) = aoall(osd,brasil);
+swap qo(pcr,brasil) = aoall(pcr,brasil);
+swap qo(pfb,brasil) = aoall(pfb,brasil);
+swap qo(v_f,brasil) = aoall(v_f,brasil);
+swap qo(wht,brasil) = aoall(wht,brasil);
 swap qo(sgr,paraguay) = aoall(sgr,paraguay);
 swap qo(ruminant,paraguay) = aoall(ruminant,paraguay);
 swap qo(gro,paraguay) = aoall(gro,paraguay);
@@ -149,12 +95,30 @@ swap qo(pcr,paraguay) = aoall(pcr,paraguay);
 swap qo(pfb,paraguay) = aoall(pfb,paraguay);
 swap qo(v_f,paraguay) = aoall(v_f,paraguay);
 swap qo(wht,paraguay) = aoall(wht,paraguay);
-Shock qo(sgr,paraguay) = -3.98;
-Shock qo(ruminant,paraguay) = -1.3;
-Shock qo(gro,paraguay) = -19.22;
-Shock qo(ocr,paraguay) = -6.48;
-Shock qo(osd,paraguay) = -6.16;
-Shock qo(pcr,paraguay) = -18.21;
-Shock qo(pfb,paraguay) = -15.87;
-Shock qo(v_f,paraguay) = -4.14;
-Shock qo(wht,paraguay) = -5.46;
+Shock qo(sgr,argentina) = -3.25928161652946;
+Shock qo(ruminant,argentina) = -10.3336857201162;
+Shock qo(gro,argentina) = -22.3948192711474;
+Shock qo(ocr,argentina) = -3.53308115941727;
+Shock qo(osd,argentina) = -2.01259726214166;
+Shock qo(pcr,argentina) = -4.46286223690614;
+Shock qo(pfb,argentina) = -1.66872583399816;
+Shock qo(v_f,argentina) = -2.75987748048514;
+Shock qo(wht,argentina) = -1.00508114256738;
+Shock qo(sgr,brasil) = -1.67233767949624;
+Shock qo(ruminant,brasil) = -1.91960790049249;
+Shock qo(gro,brasil) = -2.75589858485727;
+Shock qo(ocr,brasil) = -0.160464131033073;
+Shock qo(osd,brasil) = -4.11528966178195;
+Shock qo(pcr,brasil) = -0.324156057026354;
+Shock qo(pfb,brasil) = -5.28710235961433;
+Shock qo(v_f,brasil) = -0.455116296993773;
+Shock qo(wht,brasil) = -4.30821981506779;
+Shock qo(sgr,paraguay) = -6.64056814363647;
+Shock qo(ruminant,paraguay) = -0.407239662336554;
+Shock qo(gro,paraguay) = -18.6473039782644;
+Shock qo(ocr,paraguay) = -8.44420765829855;
+Shock qo(osd,paraguay) = -9.93624321506029;
+Shock qo(pcr,paraguay) = -47.7013350033843;
+Shock qo(pfb,paraguay) = -26.076203140711;
+Shock qo(v_f,paraguay) = -3.73838986162487;
+Shock qo(wht,paraguay) = -8.30961855085653;

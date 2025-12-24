@@ -1,5 +1,3 @@
-"argentina"
 "bolivia"
 "colombia"
-"ivorycoast"
-"paraguay"
+"peru"

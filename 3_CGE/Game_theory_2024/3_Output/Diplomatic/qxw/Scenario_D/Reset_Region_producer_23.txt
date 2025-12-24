@@ -1,5 +1,4 @@
-"angdrc"
-"ivorycoast"
 "indonesia"
 "malasya"
-"paraguay"
+"angola"
+"drc"

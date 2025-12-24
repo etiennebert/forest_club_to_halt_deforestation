@@ -1,6 +1,2 @@
-"japan"
-"korea"
-"us"
 "eu27"
 "uk"
-"efta"

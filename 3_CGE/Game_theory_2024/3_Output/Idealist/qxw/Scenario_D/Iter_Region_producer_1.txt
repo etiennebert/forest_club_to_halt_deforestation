@@ -1,3 +1,2 @@
-"argentina"
-"bolivia"
-"ghana"
+"colombia"
+"peru"

@@ -1,3 +1,4 @@
-"angdrc"
-"colombia"
-"peru"
+"indonesia"
+"paraguay"
+"angola"
+"ghana"

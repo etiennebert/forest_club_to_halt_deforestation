@@ -1,2 +1,5 @@
-"efta"
-"ssa"
+"china"
+"myanmar"
+"mexico"
+"nafr"
+"eafr"

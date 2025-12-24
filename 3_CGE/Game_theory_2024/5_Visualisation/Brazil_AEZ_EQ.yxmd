@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="90" y="102" />
+        <Position x="54" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -20,9 +20,6 @@
 Query=`p_HARVSTAREA_L$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="p_HARVSTAREA_L" size="255" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`p_HARVSTAREA_L$`" type="V_String" />
@@ -41,7 +38,7 @@ Query=`p_HARVSTAREA_L$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="90" y="294" />
+        <Position x="54" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -58,9 +55,6 @@ Query=`p_HARVSTAREA_L$`</DefaultAnnotationText>
 Query=`cHARVSTAREA$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="cHARVSTAREA" size="255" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`cHARVSTAREA$`" type="V_String" />
@@ -79,7 +73,7 @@ Query=`cHARVSTAREA$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
-        <Position x="306" y="90" />
+        <Position x="270" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -110,7 +104,7 @@ Query=`cHARVSTAREA$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
-        <Position x="342" y="294" />
+        <Position x="306" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -141,7 +135,7 @@ Query=`cHARVSTAREA$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="102" y="522" />
+        <Position x="66" y="486" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -158,9 +152,6 @@ Query=`cHARVSTAREA$`</DefaultAnnotationText>
 Query=`p_LANDCOVER_L$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="p_LANDCOVER_L" size="255" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`p_LANDCOVER_L$`" type="V_String" />
@@ -178,7 +169,7 @@ Query=`p_LANDCOVER_L$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="534" y="594" />
+        <Position x="498" y="558" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -195,9 +186,6 @@ Query=`p_LANDCOVER_L$`</DefaultAnnotationText>
 Query=`Ruminant$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="LUC" size="255" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`Ruminant$`" type="V_String" />
@@ -209,7 +197,7 @@ Query=`Ruminant$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
-        <Position x="606" y="378" />
+        <Position x="570" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -233,7 +221,7 @@ Query=`Ruminant$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="522" y="474" />
+        <Position x="486" y="438" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -250,9 +238,6 @@ Query=`Ruminant$`</DefaultAnnotationText>
 Query=`Forest$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="LUC" size="255" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`Forest$`" type="V_String" />
@@ -264,7 +249,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="510" y="378" />
+        <Position x="474" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -290,7 +275,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="534" y="726" />
+        <Position x="498" y="690" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -316,7 +301,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="786" y="414" />
+        <Position x="750" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -348,7 +333,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="702" y="630" />
+        <Position x="666" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -380,7 +365,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="906" y="414" />
+        <Position x="870" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -399,7 +384,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="810" y="630" />
+        <Position x="774" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -418,7 +403,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1182" y="510" />
+        <Position x="1146" y="474" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -456,7 +441,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="546" y="162" />
+        <Position x="510" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -491,26 +476,26 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1302" y="270" />
+        <Position x="1266" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <AutoResetMode>Custom</AutoResetMode>
           <MultiMetaInfo>
-            <MetaInfo name="#1">
-              <RecordInfo>
-                <Field name="p_HARVSTAREA_L" size="255" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`p_HARVSTAREA_L$`" type="V_String" column="1" />
-                <Field name="Name" size="5" source="Transpose:" type="String" column="2" />
-                <Field name="Value" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`cHARVSTAREA$`" type="Double" column="3" />
-                <Field name="Prct" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`p_HARVSTAREA_L$`" type="Double" column="5" />
-              </RecordInfo>
-            </MetaInfo>
             <MetaInfo name="#2">
               <RecordInfo>
                 <Field name="p_LANDCOVER_L" size="255" source="File: (Multiple Sources)" type="V_String" column="1" />
                 <Field name="ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="2" />
                 <Field name="Forest" source="File: (Multiple Sources)" type="Double" column="3" />
                 <Field name="Value" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`p_LANDCOVER_L$`" type="Double" column="5" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field name="p_HARVSTAREA_L" size="255" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`p_HARVSTAREA_L$`" type="V_String" column="1" />
+                <Field name="Name" size="5" source="Transpose:" type="String" column="2" />
+                <Field name="Value" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`cHARVSTAREA$`" type="Double" column="3" />
+                <Field name="Prct" source="File: C:\runGTAP375\Game_theory_2024\5_Visualisation\QOE_Eq_Brazil_Detailed_Results.xlsx|||`p_HARVSTAREA_L$`" type="Double" column="5" />
               </RecordInfo>
             </MetaInfo>
           </MultiMetaInfo>
@@ -529,7 +514,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="1398" y="270" />
+        <Position x="1362" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -551,7 +536,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="1518" y="270" />
+        <Position x="1482" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -572,7 +557,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1626" y="270" />
+        <Position x="1590" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -591,7 +576,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1386" y="426" />
+        <Position x="1350" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -619,7 +604,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1458" y="426" />
+        <Position x="1422" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -638,7 +623,7 @@ Query=`Forest$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="1674" y="414" />
+        <Position x="1638" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -658,7 +643,7 @@ AEZ - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1782" y="414" />
+        <Position x="1746" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -679,7 +664,7 @@ Pre_Sim = [Post_Sim]-[Diff]
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="1854" y="414" />
+        <Position x="1818" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -694,9 +679,9 @@ Pre_Sim = [Post_Sim]-[Diff]
               <PeriodType>
               </PeriodType>
               <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
               <StartDate>2025-01-31 17:37:38</StartDate>
               <EndDate>2025-01-31 17:37:38</EndDate>
-              <Operand>0</Operand>
             </Operands>
           </Simple>
         </Configuration>
@@ -710,7 +695,7 @@ Pre_Sim = [Post_Sim]-[Diff]
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1962" y="402" />
+        <Position x="1926" y="366" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -736,7 +721,7 @@ Pre_Sim = [Post_Sim]-[Diff]
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="2058" y="402" />
+        <Position x="2022" y="366" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -748,7 +733,7 @@ Pre_Sim = [Post_Sim]-[Diff]
             <UNCLocal>False</UNCLocal>
             <SkipFieldNames>False</SkipFieldNames>
             <SuppressBlankFile>False</SuppressBlankFile>
-            <OutputOption>Create</OutputOption>
+            <OutputOption>RemoveFile</OutputOption>
           </FormatSpecificOptions>
           <MultiFile value="False" />
         </Configuration>

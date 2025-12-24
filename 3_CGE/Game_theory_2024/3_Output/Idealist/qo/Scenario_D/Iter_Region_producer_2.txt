@@ -1,1 +1,2 @@
-"malasya"
+"argentina"
+"bolivia"

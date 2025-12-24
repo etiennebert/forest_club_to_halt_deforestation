@@ -1,5 +1,4 @@
 "argentina"
-"colombia"
-"ghana"
-"ivorycoast"
+"bolivia"
+"brasil"
 "paraguay"

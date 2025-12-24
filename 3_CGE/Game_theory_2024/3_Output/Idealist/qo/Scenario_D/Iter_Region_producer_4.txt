@@ -1,2 +1,1 @@
-"angdrc"
-"brasil"
+"angola"

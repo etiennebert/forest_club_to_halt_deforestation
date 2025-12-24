@@ -1,282 +1,174 @@
-! ---------------
-! .TAB file Model name
-Auxiliary files = gtapaez ;
-
-structurally singular solve modified equations = yes ;
-
-XSet MERCOSUR (Argentina, Bolivia, Brasil, Colombia, Paraguay, Peru, Uruguay, Venezuela); 
-XSubset MERCOSUR is subset of REG;
-XSet WORLD (Madagascar,Mozambique,Myanmar, Nigeria, NewZealand, Oceania, China, Japan, 
-Korea, India, EastAsia, SEAsia, SouthAsia, US, Canada, Mexico, LatinAmer, EU27, UK, 
-Russia, EFTA, MENA, SSA, RestofWorld); 
-XSubset WORLD is subset of REG;
-
-XSet SET1 (EU27,UK,EFTA); 
-XSubset SET1 is subset of REG;
-
-XSet SET2 (US,EU27,UK,EFTA); 
-XSubset SET2 is subset of REG;
-
-XSet SET3 (china,US,EU27,UK,EFTA); 
-XSubset SET3 is subset of REG;
-
-XSet SET4 (china,US,EU27,UK,EFTA,mena); 
-XSubset SET4 is subset of REG;
-
+! This Command file
+! C:runGTAP375workNATDEF.cmf
+! was written by RunGTAP (Version 3.75 built 23/May/2022)
+! If a version has no CMFSTART file of its own
+! RunGTAP creates one by copying the supplied file CMFSTART.DEF
+CPU = yes;  ! log show simulation times
+NDS = yes;  ! no displays
+Extrapolation accuracy file = YES ; ! XAC file
+!servants=1; ! use 2 processors at once, if possible
+file GTAPSUM = inSUMMARY.har;
+file WELVIEW = inDECOMP.har;
+file GTAPVOL = inGTAPVOL.har;
+!@ end of CMFSTART part
 
 ! Tell the model the data, parameters and sets - start
 ! Original Data files
 ! -------------------
-!
-File gtapDATA = inbasedata.har ; !  file containing all base data
-File gtapPARM = indefault.prm ; !  file containing all parameters
-File gtapSETS = insets.har ; !  file containing all sets & each of their elements
-!
+file gtapDATA = inbasedata.har;
+file gtapPARM = indefault.prm;
+file gtapSETS = insets.har;
 
 ! Tell the model where to store the model sims - start
 ! Output files
 ! ------------
 !
-Solution file = C:runGTAP375Game_theory_20242_ModelNATDEF.sl4;
-Updated file gtapDATA = C:runGTAP375Game_theory_20242_Modelgdata.upd;
 
-! Tell the model the closure - start
-!  STANDARD CLOSURE STATEMENTS
-! ---- Demand Drivers 
+Updated file gtapDATA = C:runGTAP375Game_theory_20242_Model_R1gdata.upd;
+Solution file = C:runGTAP375Game_theory_20242_Model_R1NATDEF.sl4;
 
-Exogenous pop ;
-Exogenous psaveslack ; 
-Exogenous pfactwld ;   
- 
-Exogenous profitslack ; 
-Exogenous incomeslack ;
-Exogenous endwslack;  
-  
-Exogenous cgdslack ;
-Exogenous tradslack ;     
-    
-Exogenous ams ;
-Exogenous atm ; 
-Exogenous atf ; 
-Exogenous ats ;
-Exogenous atd ;   
-    
-Exogenous aosec ;
-Exogenous aoreg ;
-Exogenous avasec ;
-Exogenous avareg ;
+Auxiliary files = GTAPV7-AEZ ;
 
-Exogenous afcom;          
-Exogenous afsec ;
-Exogenous afreg ;
-Exogenous afecom ;
-Exogenous afesec ;
-Exogenous afereg;   
-   
-Exogenous aoall ;
-Exogenous afall ;
-Exogenous afeall;  
-      
-Exogenous au ;
-Exogenous dppriv ;
-Exogenous dpgov ;
-Exogenous dpsave;  
-      
-Exogenous to ;
-Exogenous tp ;
-Exogenous tpd ;
-Exogenous tm ;
-Exogenous tms ;
-Exogenous tx ;
-Exogenous txs ;
-
-Exogenous tfd_f ;
-Exogenous tmf_f ;
-Exogenous tms_f;     
-   
-Exogenous qo(ENDW_COMM,REG); 
-Exogenous p_LANDCOVER_L(AEZ_COMM,UNMNGLAND,REG);
-
-REST Endogenous;  ! Declare all other variables as endogenous (calculated within the model)
-
-! Tell the model the closure - end
-
-!
-! Verbal description
-! ------------------
-Verbal Description = <cmf>;
-
-!
-! Solution method
-! ---------------
-!
+Verbal Description =
+Initial tariff applied per EU on all deforestation countries;
 !Method = Gragg;
-
-
-LU decompose transpose = yes;
-
-log file = yes ;
-
-!
-! Miscellaneous info
-! ------------------
-!
-automatic accuracy = yes;
 !Steps = 4 8 16;
-!subintervals = 3;
-!accuracy figures = 2;
+automatic accuracy = yes;
+!accuracy figures = 4;
 !accuracy percent = 80;
-!minimum subinterval length =  1.0E-6;
+!minimum subinterval length =  1.0E-0003;
 !minimum subinterval fails = stop;
-!accuracy criterion = data;
-!
+!accuracy criterion = Data;
+subintervals = 3;
 
-! Shocks - start
+! basic closure
+Exogenous
+          pop
+          psaveslack pfactwld
+          profitslack incomeslack endwslack
+          cgdslack 
+          tradslack
+          ams atm atf ats atd
+          aosec aoreg avasec avareg
+          aintsec aintreg aintall
+          afcom afsec afreg afecom afesec afereg
+          aoall afall afeall
+          au dppriv dpgov dpsave
+          to tinc
+          tpreg tm tms tx txs
+          tfd_f tmf_f tms_f
+          qe
+          qesf
+! GTAP-AEZ: Additional exogenous variables
+          p_UNMGLANDF  ! AEZS*UNMGL*REG   supply of unmanaged land cover e in r
 
-!swap DTBALR = dpsave;
-!swap DTBALR(restofworld) = dpsave(restofworld);
-!Shock tms_f =  file TMSF.har header 0101;
+          ;
+Rest endogenous;
 
 ! Part for productivity shocks;
 Shock tms_f =  file NATDEF.har header 0101;
 ! Part for productivity shocks from R;
-swap qxw(sgr,argentina)=tmf_f(sgr,argentina);
-Shock qxw(sgr,argentina) = -0.6;
-swap qxw(ruminant,argentina)=tmf_f(ruminant,argentina);
-Shock qxw(ruminant,argentina) = -5.4;
-swap qxw(gro,argentina)=tmf_f(gro,argentina);
-Shock qxw(gro,argentina) = -2.09;
-swap qxw(ocr,argentina)=tmf_f(ocr,argentina);
-Shock qxw(ocr,argentina) = -1.08;
-swap qxw(osd,argentina)=tmf_f(osd,argentina);
-Shock qxw(osd,argentina) = -1.08;
-swap qxw(pcr,argentina)=tmf_f(pcr,argentina);
-Shock qxw(pcr,argentina) = -0.92;
-swap qxw(pfb,argentina)=tmf_f(pfb,argentina);
-Shock qxw(pfb,argentina) = -2;
-swap qxw(v_f,argentina)=tmf_f(v_f,argentina);
-Shock qxw(v_f,argentina) = -0.81;
-swap qxw(wht,argentina)=tmf_f(wht,argentina);
-Shock qxw(wht,argentina) = -0.93;
-swap qxw(sgr,bolivia)=tmf_f(sgr,bolivia);
-Shock qxw(sgr,bolivia) = -2.44;
-swap qxw(ruminant,bolivia)=tmf_f(ruminant,bolivia);
-Shock qxw(ruminant,bolivia) = -2.88;
-swap qxw(gro,bolivia)=tmf_f(gro,bolivia);
-Shock qxw(gro,bolivia) = -15.81;
-swap qxw(ocr,bolivia)=tmf_f(ocr,bolivia);
-Shock qxw(ocr,bolivia) = -7.14;
-swap qxw(osd,bolivia)=tmf_f(osd,bolivia);
-Shock qxw(osd,bolivia) = -4.32;
-swap qxw(pcr,bolivia)=tmf_f(pcr,bolivia);
-Shock qxw(pcr,bolivia) = -3.41;
-swap qxw(pfb,bolivia)=tmf_f(pfb,bolivia);
-Shock qxw(pfb,bolivia) = -6.57;
-swap qxw(v_f,bolivia)=tmf_f(v_f,bolivia);
-Shock qxw(v_f,bolivia) = -5.03;
-swap qxw(wht,bolivia)=tmf_f(wht,bolivia);
-Shock qxw(wht,bolivia) = -4.13;
 swap qxw(sgr,brasil)=tmf_f(sgr,brasil);
-Shock qxw(sgr,brasil) = -1.1;
+Shock qxw(sgr,brasil) = -1.67233767949624;
 swap qxw(ruminant,brasil)=tmf_f(ruminant,brasil);
-Shock qxw(ruminant,brasil) = -1.43;
+Shock qxw(ruminant,brasil) = -1.91960790049249;
 swap qxw(gro,brasil)=tmf_f(gro,brasil);
-Shock qxw(gro,brasil) = -2.89;
+Shock qxw(gro,brasil) = -2.75589858485727;
 swap qxw(ocr,brasil)=tmf_f(ocr,brasil);
-Shock qxw(ocr,brasil) = -1.89;
+Shock qxw(ocr,brasil) = -0.160464131033073;
 swap qxw(osd,brasil)=tmf_f(osd,brasil);
-Shock qxw(osd,brasil) = -3.23;
+Shock qxw(osd,brasil) = -4.11528966178195;
 swap qxw(pcr,brasil)=tmf_f(pcr,brasil);
-Shock qxw(pcr,brasil) = -0.5;
+Shock qxw(pcr,brasil) = -0.324156057026354;
 swap qxw(pfb,brasil)=tmf_f(pfb,brasil);
-Shock qxw(pfb,brasil) = -2.9;
+Shock qxw(pfb,brasil) = -5.28710235961433;
 swap qxw(v_f,brasil)=tmf_f(v_f,brasil);
-Shock qxw(v_f,brasil) = -1.32;
+Shock qxw(v_f,brasil) = -0.455116296993773;
 swap qxw(wht,brasil)=tmf_f(wht,brasil);
-Shock qxw(wht,brasil) = -0.61;
+Shock qxw(wht,brasil) = -4.30821981506779;
 swap qxw(sgr,colombia)=tmf_f(sgr,colombia);
-Shock qxw(sgr,colombia) = -2.83;
+Shock qxw(sgr,colombia) = -5.80837337991601;
 swap qxw(ruminant,colombia)=tmf_f(ruminant,colombia);
-Shock qxw(ruminant,colombia) = -1.61;
+Shock qxw(ruminant,colombia) = -1.86735562841864;
 swap qxw(gro,colombia)=tmf_f(gro,colombia);
-Shock qxw(gro,colombia) = -5.34;
+Shock qxw(gro,colombia) = -6.52496021470187;
 swap qxw(ocr,colombia)=tmf_f(ocr,colombia);
-Shock qxw(ocr,colombia) = -5.45;
+Shock qxw(ocr,colombia) = -4.8699812692597;
 swap qxw(osd,colombia)=tmf_f(osd,colombia);
-Shock qxw(osd,colombia) = -7.91;
+Shock qxw(osd,colombia) = -20.8594932560012;
 swap qxw(pcr,colombia)=tmf_f(pcr,colombia);
-Shock qxw(pcr,colombia) = -2.54;
+Shock qxw(pcr,colombia) = -8.04269112882153;
 swap qxw(pfb,colombia)=tmf_f(pfb,colombia);
-Shock qxw(pfb,colombia) = -2.4;
+Shock qxw(pfb,colombia) = -4.18223893726233;
 swap qxw(v_f,colombia)=tmf_f(v_f,colombia);
-Shock qxw(v_f,colombia) = -5;
+Shock qxw(v_f,colombia) = -6.77104320086869;
 swap qxw(wht,colombia)=tmf_f(wht,colombia);
-Shock qxw(wht,colombia) = -5.96;
-swap qxw(sgr,ghana)=tmf_f(sgr,ghana);
-Shock qxw(sgr,ghana) = -2.55;
-swap qxw(ruminant,ghana)=tmf_f(ruminant,ghana);
-Shock qxw(ruminant,ghana) = -2.24;
-swap qxw(gro,ghana)=tmf_f(gro,ghana);
-Shock qxw(gro,ghana) = -4.48;
-swap qxw(ocr,ghana)=tmf_f(ocr,ghana);
-Shock qxw(ocr,ghana) = -6.66;
-swap qxw(osd,ghana)=tmf_f(osd,ghana);
-Shock qxw(osd,ghana) = -6.2;
-swap qxw(pcr,ghana)=tmf_f(pcr,ghana);
-Shock qxw(pcr,ghana) = -6.51;
-swap qxw(pfb,ghana)=tmf_f(pfb,ghana);
-Shock qxw(pfb,ghana) = -9.19;
-swap qxw(v_f,ghana)=tmf_f(v_f,ghana);
-Shock qxw(v_f,ghana) = -6.19;
-swap qxw(sgr,ivorycoast)=tmf_f(sgr,ivorycoast);
-Shock qxw(sgr,ivorycoast) = -11.51;
-swap qxw(ruminant,ivorycoast)=tmf_f(ruminant,ivorycoast);
-Shock qxw(ruminant,ivorycoast) = -6.97;
-swap qxw(gro,ivorycoast)=tmf_f(gro,ivorycoast);
-Shock qxw(gro,ivorycoast) = -11.89;
-swap qxw(ocr,ivorycoast)=tmf_f(ocr,ivorycoast);
-Shock qxw(ocr,ivorycoast) = -24.36;
-swap qxw(osd,ivorycoast)=tmf_f(osd,ivorycoast);
-Shock qxw(osd,ivorycoast) = -14.18;
-swap qxw(pcr,ivorycoast)=tmf_f(pcr,ivorycoast);
-Shock qxw(pcr,ivorycoast) = -10.3;
-swap qxw(pfb,ivorycoast)=tmf_f(pfb,ivorycoast);
-Shock qxw(pfb,ivorycoast) = -18.65;
-swap qxw(v_f,ivorycoast)=tmf_f(v_f,ivorycoast);
-Shock qxw(v_f,ivorycoast) = -21.32;
+Shock qxw(wht,colombia) = -26.2090245549756;
 swap qxw(sgr,paraguay)=tmf_f(sgr,paraguay);
-Shock qxw(sgr,paraguay) = -3.98;
+Shock qxw(sgr,paraguay) = -6.64056814363647;
 swap qxw(ruminant,paraguay)=tmf_f(ruminant,paraguay);
-Shock qxw(ruminant,paraguay) = -1.3;
+Shock qxw(ruminant,paraguay) = -0.407239662336554;
 swap qxw(gro,paraguay)=tmf_f(gro,paraguay);
-Shock qxw(gro,paraguay) = -19.22;
+Shock qxw(gro,paraguay) = -18.6473039782644;
 swap qxw(ocr,paraguay)=tmf_f(ocr,paraguay);
-Shock qxw(ocr,paraguay) = -6.48;
+Shock qxw(ocr,paraguay) = -8.44420765829855;
 swap qxw(osd,paraguay)=tmf_f(osd,paraguay);
-Shock qxw(osd,paraguay) = -6.16;
+Shock qxw(osd,paraguay) = -9.93624321506029;
 swap qxw(pcr,paraguay)=tmf_f(pcr,paraguay);
-Shock qxw(pcr,paraguay) = -18.21;
+Shock qxw(pcr,paraguay) = -47.7013350033843;
 swap qxw(pfb,paraguay)=tmf_f(pfb,paraguay);
-Shock qxw(pfb,paraguay) = -15.87;
+Shock qxw(pfb,paraguay) = -26.076203140711;
 swap qxw(v_f,paraguay)=tmf_f(v_f,paraguay);
-Shock qxw(v_f,paraguay) = -4.14;
+Shock qxw(v_f,paraguay) = -3.73838986162487;
 swap qxw(wht,paraguay)=tmf_f(wht,paraguay);
-Shock qxw(wht,paraguay) = -5.46;
+Shock qxw(wht,paraguay) = -8.30961855085653;
 swap qxw(sgr,peru)=tmf_f(sgr,peru);
-Shock qxw(sgr,peru) = -4.45;
+Shock qxw(sgr,peru) = -6.45718402540648;
 swap qxw(ruminant,peru)=tmf_f(ruminant,peru);
-Shock qxw(ruminant,peru) = -5.73;
+Shock qxw(ruminant,peru) = -4.68697795113589;
 swap qxw(gro,peru)=tmf_f(gro,peru);
-Shock qxw(gro,peru) = -8.13;
+Shock qxw(gro,peru) = -2.49525629529072;
 swap qxw(ocr,peru)=tmf_f(ocr,peru);
-Shock qxw(ocr,peru) = -13.7;
+Shock qxw(ocr,peru) = -15.3736177279787;
 swap qxw(osd,peru)=tmf_f(osd,peru);
-Shock qxw(osd,peru) = -23.93;
+Shock qxw(osd,peru) = -21.6776126003181;
 swap qxw(pcr,peru)=tmf_f(pcr,peru);
-Shock qxw(pcr,peru) = -4.98;
+Shock qxw(pcr,peru) = -5.31756074430098;
 swap qxw(pfb,peru)=tmf_f(pfb,peru);
-Shock qxw(pfb,peru) = -23.75;
+Shock qxw(pfb,peru) = -24.7290644124698;
 swap qxw(v_f,peru)=tmf_f(v_f,peru);
-Shock qxw(v_f,peru) = -7.48;
+Shock qxw(v_f,peru) = -2.48731618327204;
 swap qxw(wht,peru)=tmf_f(wht,peru);
-Shock qxw(wht,peru) = -3.23;
+Shock qxw(wht,peru) = -2.97962986417088;
+swap qxw(sgr,ivorycoast)=tmf_f(sgr,ivorycoast);
+Shock qxw(sgr,ivorycoast) = -7.51186989934635;
+swap qxw(ruminant,ivorycoast)=tmf_f(ruminant,ivorycoast);
+Shock qxw(ruminant,ivorycoast) = -0.479716679781462;
+swap qxw(gro,ivorycoast)=tmf_f(gro,ivorycoast);
+Shock qxw(gro,ivorycoast) = -2.57793825071984;
+swap qxw(ocr,ivorycoast)=tmf_f(ocr,ivorycoast);
+Shock qxw(ocr,ivorycoast) = -25.0595885845658;
+swap qxw(osd,ivorycoast)=tmf_f(osd,ivorycoast);
+Shock qxw(osd,ivorycoast) = -7.28322588435519;
+swap qxw(pcr,ivorycoast)=tmf_f(pcr,ivorycoast);
+Shock qxw(pcr,ivorycoast) = -11.4802738669402;
+swap qxw(pfb,ivorycoast)=tmf_f(pfb,ivorycoast);
+Shock qxw(pfb,ivorycoast) = -15.6107062311664;
+swap qxw(v_f,ivorycoast)=tmf_f(v_f,ivorycoast);
+Shock qxw(v_f,ivorycoast) = -11.5082533036973;
+swap qxw(sgr,ghana)=tmf_f(sgr,ghana);
+Shock qxw(sgr,ghana) = -8.22289865462056;
+swap qxw(ruminant,ghana)=tmf_f(ruminant,ghana);
+Shock qxw(ruminant,ghana) = -1.0104755651357;
+swap qxw(gro,ghana)=tmf_f(gro,ghana);
+Shock qxw(gro,ghana) = -1.06358688077863;
+swap qxw(ocr,ghana)=tmf_f(ocr,ghana);
+Shock qxw(ocr,ghana) = -8.96095721444909;
+swap qxw(osd,ghana)=tmf_f(osd,ghana);
+Shock qxw(osd,ghana) = -12.100729048226;
+swap qxw(pcr,ghana)=tmf_f(pcr,ghana);
+Shock qxw(pcr,ghana) = -26.4517754867878;
+swap qxw(pfb,ghana)=tmf_f(pfb,ghana);
+Shock qxw(pfb,ghana) = -26.4259744326548;
+swap qxw(v_f,ghana)=tmf_f(v_f,ghana);
+Shock qxw(v_f,ghana) = -10.7615992436893;
