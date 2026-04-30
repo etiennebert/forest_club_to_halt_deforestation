@@ -2,11 +2,11 @@
 
 
 
-# A trade-based Forest Club as a path to halting Tropical deforestation – Code and data
+# A trade-based Forest Club to halt tropical deforestation: sustaining environmental cooperation amid global turbulence – Code and data
 
 This repository provides supplementary information, data workflows, and scripts for the study:
 
-A trade-based Forest Club as a path to halting Tropical deforestation  
+A trade-based Forest Club to halt tropical deforestation: sustaining environmental cooperation amid global turbulence
 Etienne Berthet<sup>1,2,3,*</sup>, Ilaria Fusacchia<sup>4</sup>, Alessandro Antimiani<sup>5</sup>, Jennifer Morris<sup>1</sup>, and Alexis Laurent<sup>2,3</sup>
 
 <sup>1</sup> MIT Center for Sustainability Science and Strategy, Massachusetts Institute of Technology; Cambridge, MA 02139, USA  
