@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="2022.3">
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="126" y="162" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -20,9 +20,6 @@
 Query=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="country" size="255" source="File: C:\runGTAP375\Game_theory_2024\0_External_data\Original_forest.xlsx|||`Sheet1$`" type="V_String" />
@@ -38,7 +35,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
             <Field name="Temperate, Moist, semi-arid" source="File: C:\runGTAP375\Game_theory_2024\0_External_data\Original_forest.xlsx|||`Sheet1$`" type="Double" />
             <Field name="Temperate, Dry, semi-arid" source="File: C:\runGTAP375\Game_theory_2024\0_External_data\Original_forest.xlsx|||`Sheet1$`" type="Double" />
             <Field name="Temperate, Arid" source="File: C:\runGTAP375\Game_theory_2024\0_External_data\Original_forest.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Tropical, High-Humidity" size="255" source="File: C:\runGTAP375\Game_theory_2024\0_External_data\Original_forest.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Tropical, High-Humidity" source="File: C:\runGTAP375\Game_theory_2024\0_External_data\Original_forest.xlsx|||`Sheet1$`" type="Double" />
             <Field name="Tropical, Humid" source="File: C:\runGTAP375\Game_theory_2024\0_External_data\Original_forest.xlsx|||`Sheet1$`" type="Double" />
             <Field name="Tropical, Sub-humid" source="File: C:\runGTAP375\Game_theory_2024\0_External_data\Original_forest.xlsx|||`Sheet1$`" type="Double" />
             <Field name="Tropical, Moist, semi-arid" source="File: C:\runGTAP375\Game_theory_2024\0_External_data\Original_forest.xlsx|||`Sheet1$`" type="Double" />
@@ -51,7 +48,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
-        <Position x="222" y="162" />
+        <Position x="150" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -92,7 +89,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="342" y="162" />
+        <Position x="270" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -113,7 +110,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings>
-        <Position x="534" y="162" />
+        <Position x="462" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -136,15 +133,12 @@ Query=`Sheet1$`</DefaultAnnotationText>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings Macro="Cleanse.yxmc" />
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="438" y="162" />
+        <Position x="366" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -152,7 +146,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
           <CommaDecimal value="False" />
           <SelectFields>
             <SelectField field="Name" selected="False" />
-            <SelectField field="Value" selected="True" rename="Original_Forest" type="Double" size="8" />
+            <SelectField field="Value" selected="True" rename="Original_Forest" />
             <SelectField field="Name1" selected="True" rename="Climate_Type" />
             <SelectField field="Name2" selected="True" rename="Humidity_Level" />
             <SelectField field="*Unknown" selected="True" />
@@ -168,7 +162,7 @@ Query=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="798" y="174" />
+        <Position x="726" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -177,7 +171,9 @@ Query=`Sheet1$`</DefaultAnnotationText>
           <Disable>False</Disable>
           <FormatSpecificOptions>
             <PreserveFormat>False</PreserveFormat>
+            <UNCLocal>False</UNCLocal>
             <SkipFieldNames>False</SkipFieldNames>
+            <SuppressBlankFile>False</SuppressBlankFile>
             <OutputOption>RemoveFile</OutputOption>
           </FormatSpecificOptions>
           <MultiFile value="False" />
@@ -196,7 +192,7 @@ Query=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="642" y="162" />
+        <Position x="570" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -259,6 +255,7 @@ Query=Sheet1</DefaultAnnotationText>
     <ShowConnectionStatusOnlyWhenRunning value="True" />
     <ZoomLevel value="0" />
     <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
     <MetaInfo>
       <NameIsFileName value="True" />
       <Name>Original_forest_values</Name>
@@ -281,6 +278,7 @@ Query=Sheet1</DefaultAnnotationText>
         <PreviousWorkflowId value="ba31ca14-fae6-4d8d-8243-d5dd7faa4840" />
         <OriginWorkflowId value="ba31ca14-fae6-4d8d-8243-d5dd7faa4840" />
       </Telemetry>
+      <PlatformWorkflowId value="" />
     </MetaInfo>
     <Events>
       <Enabled value="True" />
