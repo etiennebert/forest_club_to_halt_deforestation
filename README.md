@@ -17,9 +17,6 @@ Etienne Berthet<sup>1,2,3,*</sup>, Ilaria Fusacchia<sup>4</sup>, Alessandro Anti
 
 *Corresponding author: etber@mit.edu
 
-Preprint available: https://doi.org/10.21203/rs.3.rs-6159434/v1
-
-If you already use this code, please cite it as: Etienne Berthet, Ilaria Fusacchia, Alessandro Antimiani et al. A trade-based Forest Club as a path to halting Tropical deforestation, 14 March 2025, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-6159434/v1]
 
 ---
 
