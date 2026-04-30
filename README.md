@@ -4,7 +4,7 @@
 
 # A trade-based Forest Club to halt tropical deforestation: sustaining environmental cooperation amid global turbulence – Code and data
 
-This repository provides supplementary information, data workflows, and scripts for the study:
+This repository provides supplementary materials, data workflows, and scripts for the study:
 
 A trade-based Forest Club to halt tropical deforestation: sustaining environmental cooperation amid global turbulence
 Etienne Berthet<sup>1,2,3,*</sup>, Ilaria Fusacchia<sup>4</sup>, Alessandro Antimiani<sup>5</sup>, Jennifer Morris<sup>1</sup>, and Alexis Laurent<sup>2,3</sup>
@@ -23,7 +23,7 @@ Etienne Berthet<sup>1,2,3,*</sup>, Ilaria Fusacchia<sup>4</sup>, Alessandro Anti
 ## Overview
 
 
-This repository accompanies the manuscript’s Supplementary Information (SI) and outlines the methodologies, data workflows, and computational steps used to:
+This repository accompanies the manuscript’s Supplementary Materials and outlines the methodologies, data workflows, and computational steps used to:
 
 1. **Quantify tropical deforestation** driven by agricultural production and trade (using HILDA+ and FAO data).  
 2. **Compute consumption- and throughflow-based deforestation footprints** via a Multi-Regional Input-Output (MRIO) framework (GLORIA dataset).  
